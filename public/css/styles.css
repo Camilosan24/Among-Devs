@@ -1,0 +1,136 @@
+::root{
+    font-size: 16px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/*------------------BODY------------------------*/
+body{
+    margin: 0;
+    padding: 0;
+}
+/*-----------------HEADER-----------------------*/
+
+.tittle{
+    font-size: 2rem;
+    color: #b6b6b6;
+}
+
+.navbar{
+    width: 100vw;
+    height: 5rem;
+    background-color: #23232e;
+    min-width: 520px;
+
+}
+
+.navbar-nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#imagen{
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+
+.iconos{
+    display: flex;
+    padding: 0 1rem;
+    margin-left: auto;
+}
+
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: #b6b6b6;
+    text-decoration: none;
+}
+
+.link-text{
+    font-size: 1rem;
+}
+
+.nav-link i{
+    min-width: 2rem;
+    padding: 0 0 0 1rem;
+}
+.nav-item{
+    margin-right: 2vw;
+}
+
+.fas {
+    font-size: 1.2rem;
+}
+
+.nav-link:hover{
+    color: #6949df;
+}
+
+/*----------------MENU-----------------------*/
+.contenedor{
+    background-color: #23232e3a;
+    height: auto;
+    width: auto;
+}
+.contenido{
+    width: 90vw;
+    margin-left: 5vw;
+    position: fixed;
+}
+
+.contenido img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/*----------------FOOTER------------------------*/
+footer {
+    min-height: 6rem;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background-color: #23232e;
+    min-width: 520px;
+}
+.iconos-footer{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 0.5rem;
+    margin-right: 30vw;
+}
+.nav-link-footer{
+    display: flex;
+    padding: 0.1rem;
+    margin-top: 1vh;
+    color: #b6b6b6;
+    text-decoration: none;
+}
+
+.link-text-footer{
+    font-size: 1rem;
+}
+.nav-link-footer i{
+    min-width: 2rem;
+    padding: 0 0.5rem 0 0;
+}
+
+.logo{
+    height: 15vh;
+    width: 10vw;
+    margin-left: 20vw;
+    background-color: red;
+}
+
+.nav-link-footer:hover{
+    color: #6949df;
+}
