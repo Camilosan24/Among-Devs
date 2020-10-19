@@ -28,9 +28,7 @@ html {
 
 #main-content {
   height: 70%;
-  width: 100%;
-  justify-content: center;
-  position: absolute;
+  top: 10%;
 }
 .main {
   height: 100%;
@@ -49,4 +47,10 @@ html {
   bottom: 0px;
   left: 0px;
   right: 0px;
+}
+
+@media only screen and (max-width:750px){
+  .main {
+    width: 100%;
+  }
 }
