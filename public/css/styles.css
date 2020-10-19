@@ -17,10 +17,6 @@ html {
 .container-fluid {
   height: 100%;
 }
-.navbar {
-  width: 100%;
-  background-color: #23232e;
-}
 #imagen {
   height: 50px;
   width: 50px;
@@ -39,15 +35,6 @@ html {
   width: 100%;
 }
 
-#footer {
-  height: auto;
-  width: 100vw;
-  position: absolute;
-  bottom: 0;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-}
 
 @media only screen and (max-width:750px){
   .main {
