@@ -4,6 +4,7 @@ const controller = require('../controller/controllerApp');
 
 router.get('/',controller.inicio);
 router.get('/game',controller.game);
+router.get('/contact',controller.contact)
 
 
 

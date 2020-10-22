@@ -14,8 +14,14 @@ html {
   padding: 0;
 }
 /*-----------------HEADER-----------------------*/
-.container-fluid {
-  height: 100%;
+.container-fluid{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.tittle{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
 }
 #imagen {
   height: 50px;
@@ -23,10 +29,10 @@ html {
 }
 
 #main-content {
-  height: 70%;
-  top: 10%;
+  height: 68%;
 }
 .main {
+  background: black;
   height: 100%;
   width: 70%;
 }
