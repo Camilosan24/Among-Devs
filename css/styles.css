@@ -41,6 +41,22 @@ html {
   width: 100%;
 }
 
+#reactor{
+  position: absolute;
+  height: 80px;
+  width: 90px;
+  top: 38%;
+  left: 18%;
+}
+
+#security{
+  position: absolute;
+  height: 80px;
+  width: 55px;
+  top: 38%;
+  left: 31.5%;
+}
+
 
 @media only screen and (max-width:750px){
   .main {
