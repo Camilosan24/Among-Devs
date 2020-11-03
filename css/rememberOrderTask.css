@@ -1,21 +1,83 @@
-canvas{
-    background-color: white;
+.task1{
+    height: 80vh;
+    background: #606C6D;
+}
+.task2{
+    height: 80vh;
+    background: #606C6D;
 }
 
-.canvas1-box{
-    height: 100%;
-    width: 100%;
-    margin: 10px;
+.button-box-1{
+    position: relative;
+    top: 30%;
+    padding: 20px;
 }
 
-#canvas1{
-    position: absolute;
-    top: 10px;
-    left: 10px;
+.btn-coloring{
+    width: 100px;
+    height: 100px;
+    background: black;
 }
 
-#canvas2{
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.hide{
+    display: flex;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateX(-100%);
+    transition: 1s;
+    z-index: 100;
+}
+.hide a{
+    color: blue;
+    display: flex;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    font-size: 50px;
+}
+.startZone{
+    display: flex;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+}
+
+.active{
+    background: blue;
+}
+#playZone{
+    padding-top: 50px;
+}
+
+.startZone a{
+    display: flex;
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    font-size: 50px;
+}
+
+.button-box-2{
+    position: relative;
+    top: 40%;
+    padding: 20px;
+}
+
+.btn-game-1{
+    background: none;
+    padding: 0;
+}
+
+.btn-game{
+    background: none;
+    box-shadow: 5px 5px 10px 1px gray;
+    padding: 0;
 }
