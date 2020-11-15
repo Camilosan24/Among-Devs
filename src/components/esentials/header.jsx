@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 export default class Header extends Component {
 	render() {
 		return (
@@ -16,20 +17,20 @@ export default class Header extends Component {
 							</div>
 							<div className="logo-text">
 								<a className="navbar-brand text-white-50" href="https://www.facebook.com">
-									<span className="tittle">mong</span>
+									<span className="title">mong</span>
 								</a>
 							</div>
 						</div>
 						<nav className="top-nav-area w-100">
 							<ul className="main-menu primary-menu">
 								<li>
-									<a href="../index.html">INICIO</a>
+									<Link to="/">INICIO</Link>
 								</li>
 								<li>
-									<a href="mapa.html">GAME</a>
+									<Link to="/game">GAME</Link>
 								</li>
 								<li>
-									<a href="contact.html">CONTACTO</a>
+									<Link to="/remember">CONTACTO</Link>
 								</li>
 							</ul>
 						</nav>

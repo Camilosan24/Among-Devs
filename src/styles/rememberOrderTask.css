@@ -25,8 +25,8 @@
 .hide {
 	display: flex;
 	position: fixed;
-	top: 0%;
-	bottom: 0%;
+	top: 0;
+	bottom: -100%;
 	left: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.9);
@@ -44,12 +44,12 @@
 .startZone {
 	display: flex;
 	position: fixed;
-	top: 0%;
-	bottom: 0%;
+	top: 0;
+	bottom: -100%;
 	left: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.9);
-	z-index: 100;
+	z-index: 200;
 }
 
 .active {
@@ -88,6 +88,9 @@
 	padding: 0;
 	width: 70px;
 	height: 70px;
+}
+.hide-buttons{
+	fill: rgba(0, 0, 0, 0);
 }
 
 .btn-game:focus {
@@ -132,5 +135,50 @@
 }
 
 .winZone a:hover {
+	color: green;
+}
+.chooseTask{
+	background-color: rgba(77, 70, 70, 0.658);
+	position: absolute;
+	top: 50%;
+	left: 37%;
+	width: 50px;
+	height: 40px;
+	transform: rotate(50%);
+	transition: 1s;
+	overflow: hidden;
+}
+
+.chooseTask:hover{
+	box-shadow: 5px 5px 10px 1px yellow;
+	position: absolute;
+	width: 400px;
+}
+
+.taskHide{
+	transform: translate(-100%);
+	transition: 1s;
+}
+.task{
+	transition: 2s;
+}
+
+.chooseTask span{
+	width: 100%;
+	height: 100%;
+	padding-left:  50px;
+	font-size: 25px;
+}
+
+.chooseTask{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: pre;
+}
+
+.successDiv{
+	position: absolute;
+	top: 25%;
+	left: 45%;
 	color: green;
 }

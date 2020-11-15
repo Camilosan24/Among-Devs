@@ -1,28 +1,50 @@
 import React from "react";
 import "../../styles/rememberOrderTask.css";
 import buttonImg from "../../img/button.svg";
-import banner from "../../img/banner.jpg";
 import Grey from "../../img/Grey.svg";
 import backTask from "../../img/backTask.png";
 import UtilFunctions from "../../functions/UtilFunctions";
+import UI from "../../functions/UI";
 
-class Hero extends React.Component {
-	constructor(){
-		super()
-		this.nextLevel = true
-		this.number = 0
-		this.level = 1
-		this.arrayCount = this.arrayCount()
-		this.divsArray = null
-		this.utilFunctions = null
-		this.insertValues = []
-		this.valuesIn = []
+class RememberTask extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			hideOrShow: false
+		};
+		this.ui1 = null;
+		this.ui2 = null;
+		this.nextLevel = false;
+		this.number = 0;
+		this.level = 1;
+		this.arrayCount = this.arrayCount();
+		this.divsArray = null;
+		this.utilFunctions = null;
+		this.valuesIn = [];
+		this.setTimes = { set1: null, set2: null, set3: null, set4: null };
 	}
 
-	componentDidMount(){
-		this.divsArray = this.divsArrayFunc()
-		this.utilFunctions = new UtilFunctions(this.arrayCount, this.divsArray)
-		this.startGame()
+	componentDidMount() {
+		let divImg1 = [];
+		let divImg2 = [];
+		for (let i = 0; i < 5; i++) {
+			divImg1.push(document.getElementsByName(`img-${i}`)[0]);
+			divImg2.push(document.getElementsByName(`2img-${i}`)[0]);
+		}
+		this.divsArray = this.divsArrayFunc();
+		this.utilFunctions = new UtilFunctions(this.arrayCount, this.divsArray);
+		this.ui1 = new UI(divImg1);
+		this.ui2 = new UI(divImg2);
+		if (this.props.booleanPlaying === true) {
+			this.startGame();
+		}
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.setTimes.set1);
+		clearTimeout(this.setTimes.set2);
+		clearTimeout(this.setTimes.set3);
+		clearTimeout(this.setTimes.set4);
 	}
 
 	arrayCount = () => {
@@ -33,7 +55,7 @@ class Hero extends React.Component {
 			array.push(numberOfAr);
 		}
 		return array;
-	}
+	};
 
 	divsArrayFunc = () => {
 		let arCount = this.arrayCount;
@@ -42,43 +64,47 @@ class Hero extends React.Component {
 			divsArray.push(document.getElementById(arCount[i]));
 		}
 		return divsArray;
-	}
+	};
 
 	startGame = () => {
-		this.nextLevel = false
-		setTimeout(() => {
+		this.setState({ hideOrShow: false });
+		this.nextLevel = false;
+		this.setTimes.set1 = setTimeout(() => {
 			this.utilFunctions.empezarGame(this.level);
 		}, 2000);
 
-		setTimeout(() => {
-			this.nextLevel = true
+		this.setTimes.set2 = setTimeout(() => {
+			this.setState({ hideOrShow: true });
+			this.nextLevel = true;
 			alert("elegir opcion");
-		}, (2000 * this.level) + 1000);
+		}, 2000 * this.level + 1000);
 	};
-
 
 	buttonHandleClick = (e) => {
 		if (this.nextLevel === true) {
 			let buttonOption = parseInt(e.target.parentElement.value);
-			this.number++
+			this.number++;
 			if (this.number <= this.level) {
-				this.valuesIn.push(buttonOption)
+				this.valuesIn.push(buttonOption);
 				for (let i = 0; i < this.valuesIn.length; i++) {
 					if (this.rightValues() === false) {
-						alert("incorrecto")
+						this.ui2.paintIncorrect(this.number - 1);
 						break;
 					} else {
+						this.ui1.paintCorrect(this.number - 1);
+						this.ui2.paintCorrect(this.number - 1);
 						if (this.number === this.level) {
-							this.level++
-							this.insertValues = []
+							this.ui2.hide();
+							this.level++;
 							if (this.level === 6) {
-								alert('ganaste')
+								this.setTimes.set3 = setTimeout(() => {
+									alert("ganaste");
+								}, 1000);
 								break;
 							} else {
-								alert('correcto')
-								this.number = 0
-								this.valuesIn = []
-								this.startGame()
+								this.number = 0;
+								this.valuesIn = [];
+								this.startGame();
 							}
 						}
 					}
@@ -100,15 +126,17 @@ class Hero extends React.Component {
 		return proofEntry;
 	};
 
+	handleLoad = () => {
+
+	};
 
 	render() {
-		console.log(this.arrayCount)
 		return (
-			<section className="hero-section overflow-hidden">
+			<section className="hero-section overflow-hidden" onLoad={this.handleLoad}>
 				<div className="hero-slider owl-carousel">
 					<div
 						className="hero-item set-bg d-flex align-items-center justify-content-center text-center"
-						data-setbg={banner}
+						data-setbg="../img/banner.jpg"
 					>
 						<div className="container">
 							<div id="playZone"></div>
@@ -118,49 +146,19 @@ class Hero extends React.Component {
 										<img name="background" src={backTask} alt="" />
 										<div className="indicators">
 											<div className="indicators-icons">
-												<img
-													src={Grey}
-													width="80"
-													height="80"
-													alt=""
-													name="img-0"
-												/>
+												<img src={Grey} alt="" name="img-0" />
 											</div>
 											<div className="indicators-icons">
-												<img
-													src={Grey}
-													width="80"
-													height="80"
-													alt=""
-													name="img-1"
-												/>
+												<img src={Grey} alt="" name="img-1" />
 											</div>
 											<div className="indicators-icons">
-												<img
-													src={Grey}
-													width="80"
-													height="80"
-													alt=""
-													name="img-2"
-												/>
+												<img src={Grey} alt="" name="img-2" />
 											</div>
 											<div className="indicators-icons">
-												<img
-													src={Grey}
-													width="80"
-													height="80"
-													alt=""
-													name="img-3"
-												/>
+												<img src={Grey} alt="" name="img-3" />
 											</div>
 											<div className="indicators-icons">
-												<img
-													src={Grey}
-													width="80"
-													height="80"
-													alt=""
-													name="img-4"
-												/>
+												<img src={Grey} alt="" name="img-4" />
 											</div>
 										</div>
 
@@ -233,6 +231,9 @@ class Hero extends React.Component {
 												/>
 											</div>
 										</div>
+										<div className="successDiv">
+											<span className="successSpan">¡Success!</span>
+										</div>
 										<div className="button-box-2" id="button-box-2">
 											<div className="row justify-content-center">
 												<button
@@ -240,21 +241,39 @@ class Hero extends React.Component {
 													value="0"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="1"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="2"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 											</div>
 											<div className="row justify-content-center">
@@ -263,21 +282,39 @@ class Hero extends React.Component {
 													value="3"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="4"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="5"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 											</div>
 											<div className="row justify-content-center">
@@ -286,21 +323,39 @@ class Hero extends React.Component {
 													value="6"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="7"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 												<button
 													className="btn-game"
 													value="8"
 													onClick={this.buttonHandleClick}
 												>
-													<img src={buttonImg} alt="" />
+													<img
+														className={
+															this.state.hideOrShow ? "" : "hide-buttons"
+														}
+														src={buttonImg}
+														alt=""
+													/>
 												</button>
 											</div>
 										</div>
@@ -315,4 +370,4 @@ class Hero extends React.Component {
 	}
 }
 
-export default Hero;
+export default RememberTask;

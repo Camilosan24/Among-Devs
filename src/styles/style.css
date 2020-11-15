@@ -5,8 +5,6 @@
  ------------------------------------
  ====================================*/
 
-
-
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
@@ -14,7 +12,7 @@
 html,
 body {
 	height: 100%;
-	font-family: 'Roboto', sans-serif;
+	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -405,11 +403,12 @@ ol {
 	margin-top: 0;
 }
 
-.main-menu li:hover>a {
+.main-menu li:hover > a {
+	text-decoration: none;
 	color: #3fff46;
 }
 
-.main-menu li:hover>a:after {
+.main-menu li:hover > a:after {
 	background-image: url("../img/icons/arrow-down-color.png");
 }
 
@@ -522,18 +521,17 @@ ol {
 	line-height: 1;
 	position: relative;
 	top: 100px;
-	opacity: 0;
+	opacity: 1;
 }
 
 .hero-item p {
 	font-size: 24px;
 	color: rgba(255, 255, 255, 0.4);
 	font-weight: 500;
-	opacity: 0.39;
 	margin-bottom: 70px;
 	position: relative;
 	top: 80px;
-	opacity: 0;
+	opacity: 1;
 }
 
 .hero-item .site-btn {
@@ -943,7 +941,13 @@ ol {
 	/* FF3.6-15 */
 	background: -webkit-linear-gradient(left, #3e0f3d 0%, #1c0f3b 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#3e0f3d), to(#1c0f3b));
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#3e0f3d),
+		to(#1c0f3b)
+	);
 	background: -o-linear-gradient(left, #3e0f3d 0%, #1c0f3b 100%);
 	background: linear-gradient(to right, #3e0f3d 0%, #1c0f3b 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -998,7 +1002,13 @@ ol {
 	/* FF3.6-15 */
 	background: -webkit-linear-gradient(left, #330d38 0%, #190d36 100%);
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#330d38), to(#190d36));
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#330d38),
+		to(#190d36)
+	);
 	background: -o-linear-gradient(left, #330d38 0%, #190d36 100%);
 	background: linear-gradient(to right, #330d38 0%, #190d36 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -1044,7 +1054,7 @@ ol {
 	font-size: 12px;
 	font-weight: 500;
 	color: #9190a5;
-	opacity: 0.20;
+	opacity: 0.2;
 }
 
 .copyright a {
@@ -1458,7 +1468,7 @@ ol {
 
 .map iframe {
 	width: 100%;
-	height: 600px;
+	height: 16000px;
 	margin-bottom: 104px;
 }
 
@@ -1765,4 +1775,45 @@ ol {
 		float: none;
 		margin-bottom: 20px;
 	}
+}
+
+.background {
+	background: url("../img/banner.jpg");
+	background-size: cover;
+}
+
+#banner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 145vh;
+}
+
+.logo-name {
+	width: 200px;
+	display: flex;
+}
+
+.logo-text {
+	top: -15%;
+	position: relative;
+	margin-left: 5px;
+}
+
+.title{
+	font-size: 25px;
+}
+
+.backgroundTask{
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+}
+
+.backgroundTask img{
+	height: 100%;
+	width: 100%;
 }
