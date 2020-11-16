@@ -30,7 +30,7 @@ export default class Header extends Component {
 									<Link to="/game">GAME</Link>
 								</li>
 								<li>
-									<Link to="/remember">CONTACTO</Link>
+									<Link to="/">CONTACTO</Link>
 								</li>
 							</ul>
 						</nav>

@@ -1,21 +1,20 @@
 import React from "react";
-import MapPng from '../../img/Full-map.png'
+import { Link } from "react-router-dom";
+import MapPng from "../../img/Full-map.png";
+import "../../styles/mapStyles.css";
 
 class Map extends React.Component {
 	render() {
 		return (
-			<section className="hero-section overflow-hidden">
-				<div className="hero-slider owl-carousel">
-					<div
-						className="hero-item set-bg d-flex align-items-center justify-content-center text-center"
-						data-setbg="../img/banner.jpg"
-					>
-						<div className="container">
-							<img className="mx-auto d-block" src={MapPng} alt="Map-img"/>
-						</div>
-					</div>
+			<div className="hero-item justify-content-center
+			">
+				<div className="container-map align-text-center">
+					<img className="mx-auto d-block" src={MapPng} alt="Map-img" />
+					<Link to="/remember"><div className="reactor"></div></Link>
+					<Link to="/electrical"><div className="electrical"></div></Link>
+					<Link to="/admin"><div className="admin"></div></Link>
 				</div>
-			</section>
+			</div>
 		);
 	}
 }

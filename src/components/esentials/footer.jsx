@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Footer extends Component {
 
@@ -9,13 +10,13 @@ export default class Footer extends Component {
 				<div className="container">
 					<ul className="main-menu footer-menu text-center">
 						<li>
-							<a href="../index.html">INICIO</a>
+							<Link to="/">INICIO</Link>
 						</li>
 						<li>
-							<a href="mapa.html">GAME</a>
+							<Link to="/game">GAME</Link>
 						</li>
 						<li>
-							<a href="contact.html">CONTACTO</a>
+							<Link to="/contact">CONTACTO</Link>
 						</li>
 					</ul>
 					<div className="footer-social d-flex justify-content-center">

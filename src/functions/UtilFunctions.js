@@ -1,7 +1,9 @@
+import onPressButton from '../sounds/onPressButton.mp3'
 class UtilFunctions {
 	constructor(arrayCount, divsArray) {
 		this.arrayCount = arrayCount;
 		this.divsArray = divsArray;
+		this.soundButton = new Audio(onPressButton)
 	}
 
 	empezarGame(level) {
@@ -11,10 +13,11 @@ class UtilFunctions {
 	}
 	cajas(div, i) {
 		setTimeout(() => {
+			this.soundButton.play()
 			this.showBox(div, (x) => {
 				this.hideBox(x);
 			});
-		}, 2000 * i);
+		}, 500 * i);
 
 	}
 
@@ -29,7 +32,7 @@ class UtilFunctions {
 		if (div) {
 			setTimeout(() => {
 				div.classList.remove("active");
-			}, 500);
+			}, 200);
 		}
 	}
 }

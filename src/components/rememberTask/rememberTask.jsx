@@ -5,12 +5,15 @@ import Grey from "../../img/Grey.svg";
 import backTask from "../../img/backTask.png";
 import UtilFunctions from "../../functions/UtilFunctions";
 import UI from "../../functions/UI";
+import taskCompleted from '../../sounds/taskCompleted.mp3'
+import onPressButton from '../../sounds/onPressButton.mp3'
+import swal from 'sweetalert';
 
 class RememberTask extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			hideOrShow: false
+			hideOrShow: false,
 		};
 		this.ui1 = null;
 		this.ui2 = null;
@@ -22,6 +25,8 @@ class RememberTask extends React.Component {
 		this.utilFunctions = null;
 		this.valuesIn = [];
 		this.setTimes = { set1: null, set2: null, set3: null, set4: null };
+		this.soundButton = new Audio(onPressButton)
+		this.soundWin = new Audio(taskCompleted);
 	}
 
 	componentDidMount() {
@@ -35,9 +40,6 @@ class RememberTask extends React.Component {
 		this.utilFunctions = new UtilFunctions(this.arrayCount, this.divsArray);
 		this.ui1 = new UI(divImg1);
 		this.ui2 = new UI(divImg2);
-		if (this.props.booleanPlaying === true) {
-			this.startGame();
-		}
 	}
 
 	componentWillUnmount() {
@@ -45,6 +47,13 @@ class RememberTask extends React.Component {
 		clearTimeout(this.setTimes.set2);
 		clearTimeout(this.setTimes.set3);
 		clearTimeout(this.setTimes.set4);
+	}
+
+	componentDidUpdate() {
+		if (this.props.booleanPlaying === "show") {
+			this.startGame();
+			this.props.hideButtonStart("hide");
+		}
 	}
 
 	arrayCount = () => {
@@ -76,8 +85,8 @@ class RememberTask extends React.Component {
 		this.setTimes.set2 = setTimeout(() => {
 			this.setState({ hideOrShow: true });
 			this.nextLevel = true;
-			alert("elegir opcion");
-		}, 2000 * this.level + 1000);
+			swal("¡Elegir opcion!");
+		}, 2000 + (this.level * 700));
 	};
 
 	buttonHandleClick = (e) => {
@@ -89,17 +98,19 @@ class RememberTask extends React.Component {
 				for (let i = 0; i < this.valuesIn.length; i++) {
 					if (this.rightValues() === false) {
 						this.ui2.paintIncorrect(this.number - 1);
+						this.soundButton.play();
+						this.props.funcResult("lose");
 						break;
 					} else {
+						this.soundButton.play();
 						this.ui1.paintCorrect(this.number - 1);
 						this.ui2.paintCorrect(this.number - 1);
 						if (this.number === this.level) {
 							this.ui2.hide();
 							this.level++;
 							if (this.level === 6) {
-								this.setTimes.set3 = setTimeout(() => {
-									alert("ganaste");
-								}, 1000);
+								this.soundWin.play();
+								this.props.funcResult("win");
 								break;
 							} else {
 								this.number = 0;
@@ -126,13 +137,18 @@ class RememberTask extends React.Component {
 		return proofEntry;
 	};
 
-	handleLoad = () => {
-
-	};
+	handleLoad = () => {};
 
 	render() {
+		if (this.start === true) {
+			this.startGame();
+			this.start = false;
+		}
 		return (
-			<section className="hero-section overflow-hidden" onLoad={this.handleLoad}>
+			<section
+				className="hero-section overflow-hidden"
+				onLoad={this.handleLoad}
+			>
 				<div className="hero-slider owl-carousel">
 					<div
 						className="hero-item set-bg d-flex align-items-center justify-content-center text-center"
@@ -230,9 +246,6 @@ class RememberTask extends React.Component {
 													name="2img-4"
 												/>
 											</div>
-										</div>
-										<div className="successDiv">
-											<span className="successSpan">¡Success!</span>
 										</div>
 										<div className="button-box-2" id="button-box-2">
 											<div className="row justify-content-center">

@@ -115,7 +115,7 @@
 	height: 15%;
 }
 
-.winZone {
+.resultZone {
 	display: flex;
 	position: fixed;
 	top: 0%;
@@ -125,7 +125,7 @@
 	background: rgba(0, 0, 0, 0.9);
 	z-index: 100;
 }
-.winZone a {
+.win a {
 	color: green;
 	display: flex;
 	position: fixed;
@@ -133,9 +133,20 @@
 	left: 45%;
 	font-size: 50px;
 }
-
-.winZone a:hover {
+.win a:hover {
 	color: green;
+}
+
+.lose a {
+	color: red;
+	display: flex;
+	position: fixed;
+	top: 45%;
+	left: 45%;
+	font-size: 50px;
+}
+.lose a:hover {
+	color: red;
 }
 .chooseTask{
 	background-color: rgba(77, 70, 70, 0.658);
@@ -156,10 +167,13 @@
 }
 
 .taskHide{
+	height: 100vh;
+	position: relative;
 	transform: translate(-100%);
 	transition: 1s;
 }
 .task{
+
 	transition: 2s;
 }
 
@@ -174,11 +188,4 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: pre;
-}
-
-.successDiv{
-	position: absolute;
-	top: 25%;
-	left: 45%;
-	color: green;
 }
