@@ -1,5 +1,5 @@
 import React from "react";
-import RememberTask from "../../components/rememberTask/RememberTask";
+import RememberTask from '../../components/rememberTask/RememberTask';
 import "../../styles/style.css";
 import "../../styles/rememberOrderTask.css";
 import Back from "../../img/fontReactor.png";
