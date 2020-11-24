@@ -88,6 +88,10 @@ class PrimeShields extends React.Component {
 
                     </div>
 
+                    <div>
+                        
+                    </div>
+
 
                     <a id="Hexuno" className="Hexagono1" onclick="hexagono()">
                         <img src="https://i.ibb.co/bHQTrMx/Hexagono-3-0.png" />
