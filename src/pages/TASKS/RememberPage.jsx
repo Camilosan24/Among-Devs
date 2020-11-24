@@ -20,9 +20,6 @@ class RememberPage extends React.Component {
 	}
 
 
-
-
-
 	audioPlay = ()=>{
 		this.sound.play()
 	}

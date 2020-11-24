@@ -189,3 +189,7 @@
 	overflow: hidden;
 	white-space: pre;
 }
+
+.highOpasity{
+	opacity: 0.1;
+}
