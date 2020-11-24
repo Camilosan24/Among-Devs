@@ -14,6 +14,7 @@ class RememberTask extends React.Component {
 		super(props);
 		this.state = {
 			hideOrShow: false,
+			activeOrNot: false
 		};
 		this.ui1 = null;
 		this.ui2 = null;
@@ -76,16 +77,18 @@ class RememberTask extends React.Component {
 	};
 
 	startGame = () => {
-		this.setState({ hideOrShow: false });
+		this.setState({ hideOrShow: false,
+		activeOrNot: false });
 		this.nextLevel = false;
 		this.setTimes.set1 = setTimeout(() => {
 			this.utilFunctions.empezarGame(this.level);
 		}, 2000);
 
 		this.setTimes.set2 = setTimeout(() => {
+			swal("¡Elegir opcion!");
 			this.setState({ hideOrShow: true });
 			this.nextLevel = true;
-			swal("¡Elegir opcion!");
+			this.setState({activeOrNot: true})
 		}, 2000 + (this.level * 700));
 	};
 
@@ -247,7 +250,7 @@ class RememberTask extends React.Component {
 												/>
 											</div>
 										</div>
-										<div className="button-box-2" id="button-box-2">
+										<div className={this.state.activeOrNot ? "button-box-2" : "highOpasity button-box-2"} id="button-box-2">
 											<div className="row justify-content-center">
 												<button
 													className="btn-game"
