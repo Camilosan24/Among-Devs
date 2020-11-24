@@ -1,0 +1,66 @@
+
+
+/*camvas princiapal*/
+
+canvas {
+   background-color: black;
+    position: absolute;
+    top: 150px; 
+    left: 860px; 
+}
+
+.botonCerrar img{
+  width: 85px;
+  height: 85px;
+  top: 40px; 
+  left: 320px; 
+} 
+
+.botonAbrir img{
+  width: 50px;
+  height: 25px;
+  top: 74px; 
+  left: 423px; 
+	box-shadow: #eeff00;
+} 
+
+.button-container{
+    display:flex;
+    display:inline-block;
+    position:relative;
+    }
+    
+.fondoImagenDivert img{
+  position: absolute;
+  width: 540px; 
+  height: 520px;
+  top: 35px; 
+  left: 400px; 
+}
+
+.button-container .fondo{
+  z-index: 1;
+}
+
+.button-container .activarEnergia{
+  z-index: 3;
+  width:52px;
+  height: 52px; 
+  position: absolute;
+  top: 415px; 
+  left: 863px; 
+}
+
+.button-container .activarEnergiaBoton{
+  z-index: 3;
+  width:72px;
+  height: 55px; 
+  position: absolute;
+  top: 362px; 
+  left: 851px; 
+  display: none;
+}
+
+.audios{
+  display: none
+}

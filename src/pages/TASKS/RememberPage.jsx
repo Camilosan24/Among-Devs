@@ -7,6 +7,7 @@ import ButtonStart from '../../components/esentials/ButtonStart'
 import WinZone from '../../components/esentials/WinZone'
 import LoseZone from '../../components/esentials/LoseZone'
 import openTask from '../../sounds/openTask.mp3'
+
 class RememberPage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -27,6 +28,7 @@ class RememberPage extends React.Component {
 			startBox: true
 		})
 	}
+	
 	hideButtonStart = (params)=>{
 		this.setState({startPlaying: params})
 	}
