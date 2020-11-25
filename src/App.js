@@ -6,6 +6,7 @@ import MapPage from './pages/MAIN/MapPage';
 import RememberPage from './pages/TASKS/RememberPage';
 import DivertPowerPage from './pages/TASKS/DivertPowerPage';
 import PrimeShieldsPage from './pages/TASKS/PrimeShieldsPage';
+import imagenFondo from './img/promo-bg.jpg'
 import "./styles/style.css";
 import "./styles/animate.css";
 import "./styles/bootstrap.min.css";
@@ -18,10 +19,10 @@ function App() {
 		<BrowserRouter>
 			<Layout>
 				<Switch>
-					<Route exact path="/" component={StartPage} />
+					<Route exact path="/" component={StartPage}/>
 					<Route exact path="/game" component={MapPage} />
 					<Route exact path="/remember" component={RememberPage} />
-					<Route exact path="/divertPower" component={DivertPowerPage} />
+					<Route exact path="/electrical" component={DivertPowerPage} />
 					<Route exact path="/primeShields" component={PrimeShieldsPage} />
 				</Switch>
 			</Layout>

@@ -1,173 +1,196 @@
-import React, {} from "react";
+import React from "react";
 import "../../styles/divertpower.css";
 
 class DivertPower extends React.Component {
+	constructor(props) {
+		super(props);
+		this.canvas = React.createRef();
+		this.state = {
+			closeGame: false,
+		};
 
-    constructor(props) {
-        super(props);
+		/*this.canvas = document.getElementById("electricidad");*/
 
-        this.canvas = React.createRef()                 
-    
-  
-        /*this.canvas = document.getElementById("electricidad");*/
-       
-        
-        //se crea un objeto para asignar los valores del rectangulo
+		//se crea un objeto para asignar los valores del rectangulo
 
-        this.energia = {
-            posicionX: 0,
-            posicionY: 100,
-            ancho: 50,
-            altura: 20
-        }
+		this.energia = {
+			posicionX: 0,
+			posicionY: 100,
+			ancho: 50,
+			altura: 20,
+		};
 
-        this.activarEnergia = document.getElementById("activar");  //evento de click sobre un boton
-        this.activarEnergia.addEventListener('click', this.activarRectangulo);
+		this.LIMITE_CARGA = 65;
 
-        this.LIMITE_CARGA = 65;
+		this.interval = null;
+	}
 
-        this.interval = null;
-    }
-    
-    componentDidMount() {
-        this.drawRectInCanvas()
-      }
-    
-      drawRectInCanvas(){
-        const ctx = this.canvas.current.getContext('2d') 
-        ctx.fillRect(5, 5, 200, 200)                     
-      }
+	componentDidMount() {
+		this.drawRectInCanvas();
+	}
 
-    //funciones
+	drawRectInCanvas = () => {
+		const ctx = this.canvas.current.getContext("2d");
+		ctx.fillRect(5, 5, 200, 200);
+		ctx.fillStyle = "#77EF0C";
+	};
 
-    activarRectangulo = () => {
+	//funciones
 
-        //intervalo, permite hacer la ilucion de que se llena a un tiempo determinado 
+	activarRectangulo = () => {
+		//intervalo, permite hacer la ilucion de que se llena a un tiempo determinado
 
-        if (this.interval === null) {
-            this.interval = setInterval(function () {
+		if (this.interval === null) {
+			this.interval = setInterval(function () {
+				if (this.estaEnElLimite) {
+					alert("Tarea completada");
+					clearInterval(this.interval);
+					this.interval = null;
+				}
 
+				this.energia.posicionY -= 0.4;
+				this.energia.altura += 0.4;
 
-                if (this.estaEnElLimite()) {
-                    alert("Tarea completada");
-                    clearInterval(this.interval);
-                    this.interval = null;
-                }
+				this.limpiar();
+				this.llenarEnergia();
+			}, 1);
+		} else {
+			clearInterval(this.interval);
+		}
+	};
 
-                this.energia.posicionY -= 0.4;
-                this.energia.altura += 0.4;
+	estaEnElLimite = () => {
+		return this.energia.posicionY <= this.LIMITE_CARGA;
+	};
 
-                this.limpiar();
-                this.lenarEnergia(this.energia);
+	limpiar = () => {
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	};
 
-            }, 1)
-        }
-        else {
-            clearInterval(this.interval);
-            this.interval = null;
-        }
-    }
+	llenarEnergia = () => {
+		//    poscisiones en x y ancho y alto
+		this.ctx.fillRect(this.posicionX, this.posicionY, this.ancho, this.altura);
+	};
 
+	/**ocultar juego */
 
-    estaEnElLimite = () => {
-        return this.energia.posicionY <= this.LIMITE_CARGA;
-    }
+	botonDos = () => {
+		document.getElementById("boton2").style.display = "block";
+		document.getElementById("activar").style.display = "none";
+		this.sonidoEnergia();
+	};
 
-    limpiar = () => {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    }
+	/**sonido animaciones */
 
-    llenarEnergia = () => {
-        //    poscisiones en x y ancho y alto 
-        this.ctx.fillRect(this.posicionX, this.posicionY, this.ancho, this.altura);
-    }
+	sonidoEnergia = () => {
+		let audio = document.getElementById("audioEnergia");
+		audio.play();
+	};
 
-    /**ocultar juego */
+	sonidoCierre = () => {
+		let audio = document.getElementById("audioCierre");
+		audio.play();
+	};
 
-    cerrarJuego = () => {
-        document.getElementById("divEnergia").style.display = 'none';
-        this.sonidoCierre();
-    }
+	render() {
+		return (
+			<section className="hero-section overflow-hidden">
+				<div className="hero-slider owl-carousel">
+					<div className="hero-item set-bg d-flex align-items-center justify-content-center text-center">
+						<div className="container">
+							<div className="row contenido">
+								<div className="col-6">
+									<div className="task-container" className={this.state.closeGame ? "hide" : ""}>
+										<img
+											alt="c-133"
+											className="fondo"
+											src="https://i.ibb.co/VWqHhb5/Fondo2-0.png"
+										/>
+										{/*imagen fondo juego*/}
 
-    mostrarJuego = () => {
-        document.getElementById("divEnergia").style.display = 'block';
-        this.sonidoCierre();
-    }
+										<div className="botonAbrir">
+											<a href="ds" onClick={this.mostrarJuego}>
+												<img
+													src="https://i.ibb.co/YXb8nTY/Electricidad-Boton-Activadir.png"
+													alt="c-532"
+												/>
+											</a>
+										</div>
 
-    botonDos = () => {
-        document.getElementById("boton2").style.display = 'block';
-        document.getElementById("activar").style.display = 'none';
-        this.sonidoEnergia();
-    }
+										<div className="audios">
+											<audio id="audioEnergia" controls>
+												<source
+													type="audio/wav"
+													src="../sound/AudioEnergia.mpeg"
+												/>
+											</audio>
 
-    /**sonido animaciones */
+											<audio id="audioCierre" controls>
+												<source
+													type="audio/wav"
+													src="../sound/AudioCierre.mpeg"
+												/>
+											</audio>
+										</div>
 
-    sonidoEnergia = () => {
-        let audio = document.getElementById("audioEnergia");
-        audio.play();
-    }
+										<div
+											className={this.state.closeGame ? "hide" : ""}
+											id="divEnergia"
+										>
+											<div className="botonCerrar">
+												{" "}
+												{/*permite cerrar el juego una vez se ejecute*/}
+												<a
+													href="#none"
+													onClick={() => this.setState({ closeGame: true })}
+												>
+													<img
+														src="https://i.ibb.co/wzMh2sv/Cerrar.png"
+														alt="c-231"
+													/>
+												</a>
+											</div>
 
-    sonidoCierre = () => {
-        let audio = document.getElementById("audioCierre");
-        audio.play();
-    }
-
-
-    render() {
-        return (
-            <React.Fragment>
-                <div className="botonAbrir">
-                    <a onclick="mostrarJuego()">
-                        <img src="https://i.ibb.co/YXb8nTY/Electricidad-Boton-Activadir.png" />
-                    </a>
-                </div>
-
-                <div className="audios">
-                    <audio id="audioEnergia" controls>
-                        <source type="audio/wav" src="../sound/AudioEnergia.mpeg" />
-                    </audio>
-
-                    <audio id="audioCierre" controls>
-                        <source type="audio/wav" src="../sound/AudioCierre.mpeg" />
-                    </audio>
-                </div>
-
-                <div className="button-container" id="divEnergia">
-
-                    <div className="botonCerrar">  {/*permite cerrar el juego una vez se ejecute*/}
-                        <a onclick="cerrarJuego()">
-                            <img src="https://i.ibb.co/wzMh2sv/Cerrar.png" />
-                        </a>
-                    </div>
-
-                    <div class="fondoImagenDivert">
-                        <img className="fondo" src="https://i.ibb.co/VWqHhb5/Fondo2-0.png" />     {/*imagen fondo juego*/}
-                    </div>
-
-                    <a onclick="botonDos()"><img id="activar" className="activarEnergia"
-                        src="https://i.ibb.co/s3Bdp4J/Boton.png" />  {/*nos permite activar el juego y ocultar un boton*/}
-                    </a>
-
-                    <div>
-                        <img id="boton2" className="activarEnergiaBoton" src="https://i.ibb.co/qJX9gPM/Boton-Energia-preview-rev-2.png" />
-                    </div>
-
-                    <canvas  id="electricidad" ref={this.canvas} height="200" width="50">
-                    </canvas>
-                </div>
-            </React.Fragment>
-        )
-    }
-
+											<div className="buttons">
+												<a href="#none" onClick={this.botonDos}>
+													<img
+														id="boton2"
+														className="activarEnergiaBoton"
+														src="https://i.ibb.co/qJX9gPM/Boton-Energia-preview-rev-2.png"
+														width="60"
+														height="60"
+														alt="c-242"
+													/>
+												</a>
+												<a href="#none" onClick={this.botonDos}>
+													<img
+														id="activar"
+														// onClick={this.activarRectangulo}
+														className="activarEnergia"
+														src="https://i.ibb.co/s3Bdp4J/Boton.png"
+														width="50"
+														height="50"
+														alt="c-34"
+													/>{" "}
+													{/*nos permite activar el juego y ocultar un boton*/}
+												</a>
+											</div>
+											<canvas
+												id="electricidad"
+												ref={this.canvas}
+												height="200"
+												width="50"
+											></canvas>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		);
+	}
 }
 
 export default DivertPower;
-
-
-
-
-
-
-
-
-

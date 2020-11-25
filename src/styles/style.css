@@ -15,6 +15,9 @@ body {
 	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	position: relative;
+	background: url("../img/banner.jpg");
+	background-size: cover;
+	position: relative;
 }
 
 h1,
@@ -460,6 +463,13 @@ ol {
   Hero section
 ---------------------*/
 
+.hero-section {
+
+	display: block;
+	width: 100%;
+
+}
+
 .hero-slider .owl-dots {
 	display: -ms-flex;
 	display: -webkit-box;
@@ -512,7 +522,6 @@ ol {
 .hero-item {
 	height: 921px;
 	padding-top: 125px;
-
 }
 
 .hero-item h2 {
@@ -996,6 +1005,8 @@ ol {
 ---------------------*/
 
 .footer-section {
+	display: block;
+	width: 100%;
 	text-align: center;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#330d38+0,190d36+100 */
 	background: #330d38;
@@ -1778,12 +1789,6 @@ ol {
 	}
 }
 
-.background {
-	background: url("../img/banner.jpg");
-	background-size: cover;
-	position: relative;
-}
-
 #banner {
 	position: absolute;
 	top: 0;
@@ -1805,30 +1810,36 @@ ol {
 	margin-left: 5px;
 }
 
-.title{
+.title {
 	font-size: 25px;
 }
 
-.backgroundTask{
+.backgroundTask {
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
 }
 
-.backgroundTask img{
+#backgroundTask img {
 	height: 100vh;
 	width: 100vw;
-	border: none	;
+	border: none;
+}
+.task {
+	position: relative;
 }
 
-@media screen and (min-width: 1365px){
-	.container{
+@media screen and (min-width: 1365px) {
+	.container {
 		position: absolute;
 		top: 20%;
 	}
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
+	width: 0;
+}
 
-	width:0;
+.container{
+	position: relative;
 }

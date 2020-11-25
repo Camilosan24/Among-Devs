@@ -29,7 +29,7 @@ class RememberPage extends React.Component {
 			startBox: true
 		})
 	}
-	
+
 	hideButtonStart = (params)=>{
 		this.setState({startPlaying: params})
 	}
@@ -39,7 +39,7 @@ class RememberPage extends React.Component {
 	}
 	render() {
 		return (
-			<div className="background">
+			<div id="background">
 				<div className="backgroundTask">
 					{this.state.startBox ? "" :<img src={ Back } alt="" />}
 					<div className="chooseTask">
