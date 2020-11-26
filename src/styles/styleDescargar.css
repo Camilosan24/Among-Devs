@@ -1,0 +1,21 @@
+canvas{
+    background-color: black;
+}
+
+.child{
+  
+  
+  left: 50px;
+  position: relative;
+  top:-790px;
+/*   
+  left: 50px;
+  position: relative;
+  top:-370px; */
+  
+}
+.carga{
+  left: 3px;
+  position: relative;
+  top:-426px;
+}
