@@ -104,7 +104,7 @@ class DivertPower extends React.Component {
 						<div className="container">
 							<div className="row contenido">
 								<div className="col-6">
-									<div className="task-container" className={this.state.closeGame ? "hide" : ""}>
+									<div className={this.state.closeGame ? "hide" : "task-container"}>
 										<img
 											alt="c-133"
 											className="fondo"

@@ -1,6 +1,5 @@
 import React from "react";
 import {Link } from 'react-router-dom'
-
 import outOfTask from '../../sounds/outOfTask.mp3'
 class WinZone extends React.Component {
 	constructor(){
@@ -19,7 +18,7 @@ class WinZone extends React.Component {
 				<div className="row">
 					<div className="col-12 win">
 						<Link to="/game" className="button" id="startButton" onClick={this.handleClick}>
-							Ganaste
+							¡Task Completed!
 						</Link>
 					</div>
 				</div>

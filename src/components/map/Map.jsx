@@ -13,6 +13,7 @@ class Map extends React.Component {
 					<Link to="/remember"><div className="reactor"></div></Link>
 					<Link to="/electrical"><div className="electrical"></div></Link>
 					<Link to="/admin"><div className="admin"></div></Link>
+					<Link to="/shield"><div className="shield"></div></Link>
 				</div>
 			</div>
 		);

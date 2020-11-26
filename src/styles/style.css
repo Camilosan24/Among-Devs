@@ -1834,8 +1834,3 @@ ol {
 body::-webkit-scrollbar {
 	width: 0;
 }
-
-.container{
-	position: relative;
-	top: -10%;
-}

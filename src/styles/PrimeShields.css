@@ -13,25 +13,23 @@
   height: 110px;
   top: 245px; 
   left: 202px;
-  box-shadow: #eeff00; 
-} 
+  box-shadow: #eeff00;
+}
 
-.shield img {
-  position: absolute;
+.shieldBox {
+    position: relative;
     height: 450px;
     width: 450px;
-    top: 160px; 
-    left: 460px; 
+    left: 60%;
+
   }
 
-  /*Hexagonos*/
-
-.Hexagono1 img {  
+.Hexagono1 img {
   position: absolute;
   width:238px;
   height: 190px;
-  top: 352px; 
-  left: 684px;
+  top: 42%;
+  left: 99%;
 }
 
 
@@ -39,24 +37,24 @@
   position: absolute;
   width:250px;
   height: 202px;
-  top: 279px; 
-  left: 557px;
+  top: 26%;
+  left: 76.5%;
 }
 
-.Hexagono3 img {  
+.Hexagono3 img {
   position: absolute;
   width:222px;
   height: 174px;
-  top: 230px; 
-  left: 687px;
+  top: 15.5%;
+  left: 99.2%;
 }
 
-.Hexagono4 img {  
+.Hexagono4 img {
   position: absolute;
   width:170px;
   height:159px;
-  top: 242px; 
-  left: 488px;
+  top: 18%;
+  left: 64.5%;
 }
 
 p {
@@ -65,4 +63,9 @@ p {
 
 .audios{
   display: none
+}
+
+.container{
+  position: relative;
+  top: -10%;
 }

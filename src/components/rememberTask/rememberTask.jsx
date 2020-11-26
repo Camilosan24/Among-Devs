@@ -7,7 +7,6 @@ import UtilFunctions from "../../functions/UtilFunctions";
 import UI from "../../functions/UI";
 import taskCompleted from "../../sounds/taskCompleted.mp3";
 import onPressButton from "../../sounds/onPressButton.mp3";
-import swal from "sweetalert";
 
 class RememberTask extends React.Component {
 	constructor(props) {
