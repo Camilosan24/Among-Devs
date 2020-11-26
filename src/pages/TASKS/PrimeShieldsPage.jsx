@@ -2,14 +2,21 @@ import React from "react";
 import PrimeShields from "../../components/primeShields/PrimeShields";
 import WinZone from '../../components/esentials/WinZone'
 import shieldBack from '../../img/shieldBack.png'
-
+import abrir from '../../sounds/AudioEnergia.mp3'
 class PrimeShieldsPage extends React.Component {
 
-	state = {
-		startBox: false,
-		winOrLoseZone: false
+	constructor(){
+		super()
+		this.state = {
+			startBox: false,
+			winOrLoseZone: false
+		}
+		this.sound = new Audio(abrir)
 	}
+
+
 	handleClick = () => {
+		this.sound.play()
 		this.setState({
 			startBox: true,
 		});

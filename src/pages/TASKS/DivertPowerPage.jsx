@@ -3,7 +3,7 @@ import DivertPower from "../../components/divertPower/DivertPower";
 import "../../styles/style.css";
 import "../../styles/divertpower.css";
 import fondoEnergia from "../../img/ElectricidadFondo.png";
-import soundDivertPower from "../../sounds/AudioCierre.mpeg";
+import soundDivertPower from "../../sounds/AudioCierre.mp3";
 
 class DivertPowerPage extends React.Component {
 	constructor(props) {
