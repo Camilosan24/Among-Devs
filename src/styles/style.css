@@ -1814,13 +1814,8 @@ ol {
 	font-size: 25px;
 }
 
-.backgroundTask {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-}
 
-#backgroundTask img {
+.backgroundTask img {
 	height: 100vh;
 	width: 100vw;
 	border: none;
@@ -1842,4 +1837,5 @@ body::-webkit-scrollbar {
 
 .container{
 	position: relative;
+	top: -10%;
 }

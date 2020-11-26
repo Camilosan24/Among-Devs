@@ -2,17 +2,16 @@
 
 /*camvas princiapal*/
 
-.backgroundTaskDivert {
+/* .backgroundTaskDivert {
     background-size: 1370px 630px;
     background-repeat: no-repeat;
-    
 }
 
 .chooseTask {
   top: 140px;
   left: 420px;
 
-}
+} */
 
 canvas {
   background-color: #eeff00;

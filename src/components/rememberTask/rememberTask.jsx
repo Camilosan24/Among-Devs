@@ -84,7 +84,6 @@ class RememberTask extends React.Component {
 		}, 2000);
 
 		this.setTimes.set2 = setTimeout(() => {
-			swal("¡Elegir opcion!");
 			this.setState({ hideOrShow: true });
 			this.nextLevel = true;
 			this.setState({ activeOrNot: true });

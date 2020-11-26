@@ -1,5 +1,5 @@
 import React from "react";
-import RememberTask from '../../components/rememberTask/rememberTask';
+import RememberTask from '../../components/rememberTask/RememberTask';
 import "../../styles/style.css";
 import "../../styles/rememberOrderTask.css";
 import Back from "../../img/fontReactor.png";
@@ -48,10 +48,9 @@ class RememberPage extends React.Component {
 						</span>
 					</div>
 				</div>
-				<div className={this.state.startBox ? "task":"taskHide"}>
-					<RememberTask hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} funcResult={this.showResultZone}/>
-					<ButtonStart hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} audioPlay={this.audioPlay}/>
-				</div>
+				{this.state.startBox && <RememberTask hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} funcResult={this.showResultZone}/>}
+				{this.state.startBox && <ButtonStart hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} audioPlay={this.audioPlay}/>}
+
 			{ this.state.winOrLoseZone === 'win' ? <WinZone/>: this.state.winOrLoseZone === 'lose' ? <LoseZone/> : ""}
 			</div>
 		);

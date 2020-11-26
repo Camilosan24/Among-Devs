@@ -5,41 +5,37 @@ import "../../styles/divertpower.css";
 import fondoEnergia from "../../img/ElectricidadFondo.png";
 import soundDivertPower from "../../sounds/AudioCierre.mpeg";
 
-
 class DivertPowerPage extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			startBox: false,
 			startPlaying: false,
-			winOrLoseZone: false
+			winOrLoseZone: false,
 		};
-		this.sound = new Audio(soundDivertPower)
+		this.sound = new Audio(soundDivertPower);
 	}
 
-
-	audioPlay = ()=>{
-		this.sound.play()
-	}
-	handleClick= () => {
-		this.audioPlay()
+	audioPlay = () => {
+		this.sound.play();
+	};
+	handleClick = () => {
+		this.audioPlay();
 		this.setState({
-			startBox: true
-		})
-	}
+			startBox: true,
+		});
+	};
 
-	hideButtonStart = (params)=>{
-		this.setState({startPlaying: params})
-	}
+	hideButtonStart = (params) => {
+		this.setState({ startPlaying: params });
+	};
 
-	showResultZone = (result)=>{
-		this.setState({winOrLoseZone: result})
-	}
+	showResultZone = (result) => {
+		this.setState({ winOrLoseZone: result });
+	};
 	render() {
 		return (
-
-			<div id="background">
+			<React.Fragment>
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={fondoEnergia} alt="" />}
 					<div className="chooseTask">
@@ -48,11 +44,11 @@ class DivertPowerPage extends React.Component {
 						</span>
 					</div>
 				</div>
-
-				<div className="task">
+				{this.state.startBox && <DivertPower/>}
+				{/* <div className={this.state.startBox ? "task" : "taskHide"}>
 					<DivertPower />
-				</div>
-			</div>
+				</div> */}
+			</React.Fragment>
 		);
 	}
 }
