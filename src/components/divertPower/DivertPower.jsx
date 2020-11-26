@@ -1,12 +1,14 @@
 import React from "react";
 import "../../styles/divertpower.css";
 
+
 class DivertPower extends React.Component {
 	constructor(props) {
 		super(props);
 		this.canvas = React.createRef();
 		this.state = {
 			closeGame: false,
+			botonDos: false
 		};
 
 		/*this.canvas = document.getElementById("electricidad");*/
@@ -58,7 +60,8 @@ class DivertPower extends React.Component {
 			clearInterval(this.interval);
 		}
 	};
-
+ 
+ 
 	estaEnElLimite = () => {
 		return this.energia.posicionY <= this.LIMITE_CARGA;
 	};
@@ -75,9 +78,10 @@ class DivertPower extends React.Component {
 	/**ocultar juego */
 
 	botonDos = () => {
-		document.getElementById("boton2").style.display = "block";
-		document.getElementById("activar").style.display = "none";
-		this.sonidoEnergia();
+		if (this.botonDos === true) {
+			this.style.display = "block";
+		}
+	
 	};
 
 	/**sonido animaciones */
@@ -107,15 +111,6 @@ class DivertPower extends React.Component {
 											src="https://i.ibb.co/VWqHhb5/Fondo2-0.png"
 										/>
 										{/*imagen fondo juego*/}
-
-										<div className="botonAbrir">
-											<a href="ds" onClick={this.mostrarJuego}>
-												<img
-													src="https://i.ibb.co/YXb8nTY/Electricidad-Boton-Activadir.png"
-													alt="c-532"
-												/>
-											</a>
-										</div>
 
 										<div className="audios">
 											<audio id="audioEnergia" controls>
@@ -152,7 +147,7 @@ class DivertPower extends React.Component {
 											</div>
 
 											<div className="buttons">
-												<a href="#none" onClick={this.botonDos}>
+												<a href="#hide" onClick={this.botonDos}>
 													<img
 														id="boton2"
 														className="activarEnergiaBoton"
@@ -162,10 +157,10 @@ class DivertPower extends React.Component {
 														alt="c-242"
 													/>
 												</a>
-												<a href="#none" onClick={this.botonDos}>
+												<a href="#none" onClick={this.activar}>
 													<img
 														id="activar"
-														// onClick={this.activarRectangulo}
+														onClick={this.activarRectangulo}
 														className="activarEnergia"
 														src="https://i.ibb.co/s3Bdp4J/Boton.png"
 														width="50"

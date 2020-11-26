@@ -2,6 +2,18 @@
 
 /*camvas princiapal*/
 
+.backgroundTaskDivert {
+    background-size: 1370px 630px;
+    background-repeat: no-repeat;
+    
+}
+
+.chooseTask {
+  top: 140px;
+  left: 420px;
+
+}
+
 canvas {
   background-color: #eeff00;
     position: absolute;
@@ -33,11 +45,11 @@ canvas {
     position:relative;
     }
 
-.fondoImagenDivert img{
+.fondo img{
   position: absolute;
   width: 540px;
   height: 520px;
-  top: 35px;
+  top: 5px;
   left: 400px;
 }
 
@@ -84,7 +96,7 @@ canvas {
 .contenido{
   justify-content: center;
   position: relative;
-  z-index: 4;
+  z-index: 2;
 }
 
 .task-container{
