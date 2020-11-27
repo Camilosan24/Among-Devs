@@ -14,8 +14,13 @@ body {
 	height: 100%;
 	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
+	background-repeat: no-repeat;
 	position: relative;
 	background: url("../img/banner.jpg");
+	background-image: url("../img/banner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1500px 1000px;
 	background-size: cover;
 	position: relative;
 }
