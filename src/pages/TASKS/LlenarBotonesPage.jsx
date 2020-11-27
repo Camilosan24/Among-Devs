@@ -2,17 +2,20 @@ import React from "react";
 import LlenarBotones from "../../components/LlenarBotones/LlenarBotones";
 
 class LlenarBotonesPage extends React.Component {
-    render() {
-        return (
-            <div ClassName="background">
-                <div ClassName="backgroundTask">
-                    <div ClassName="Task">
-                        <LlenarBotones />
-                    </div>
-                </div>
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div className="backgroundTaskDivert">
+				{this.state.startBox ? "" : <img src={fondoEnergia} alt="" />}
+				<div className="tasks">
+					<ChooseTask
+						name={"Mision Calibracion"}
+						value={true}
+						showFunc={this.showTask}
+					/>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default LlenarBotonesPage;

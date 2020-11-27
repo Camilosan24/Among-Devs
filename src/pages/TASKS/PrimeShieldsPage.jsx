@@ -37,7 +37,7 @@ class PrimeShieldsPage extends React.Component {
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={shieldBack} alt="" />}
 					<div className="tasks">
-						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask} />
+						<ChooseTask name={"Mision "} value={true} showFunc={this.showTask} />
 					</div>
 				</div>
 				{this.state.startBox && (

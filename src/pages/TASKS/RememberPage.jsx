@@ -8,6 +8,7 @@ import WinZone from "../../components/esentials/WinZone";
 import LoseZone from "../../components/esentials/LoseZone";
 import openTask from "../../sounds/openTask.mp3";
 import ChooseTask from "../../components/esentials/ChooseTask";
+import LlenarBotones from "../../components/LlenarBotones/LlenarBotones";
 
 class RememberPage extends React.Component {
 	constructor(props) {
@@ -20,11 +21,11 @@ class RememberPage extends React.Component {
 		this.sound = new Audio(openTask);
 	}
 
-	audioPlay=()=>{
+	audioPlay = () => {
 		this.sound.play();
-	}
+	};
 	showTasks = (params) => {
-		this.audioPlay()
+		this.audioPlay();
 		this.setState({ startBox: params });
 	};
 
@@ -41,8 +42,16 @@ class RememberPage extends React.Component {
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={Back} alt="" />}
 					<div className="tasks">
-						<ChooseTask name={"Mision Remember positions"} value={'remember'} showFunc={this.showTasks}/>
-						<ChooseTask name={"Mision Order numbers"} value={'task'} showFunc={this.showTasks}/>
+						<ChooseTask
+							name={"Mision Remember positions"}
+							value={"remember"}
+							showFunc={this.showTasks}
+						/>
+						<ChooseTask
+							name={"Mision Order numbers"}
+							value={"full"}
+							showFunc={this.showTasks}
+						/>
 					</div>
 				</div>
 				{this.state.startBox === "remember" ? (
@@ -54,15 +63,10 @@ class RememberPage extends React.Component {
 				) : (
 					""
 				)}
-				{this.state.startBox === "remember" ? (
-					<ButtonStart
-						hideButtonStart={this.hideButtonStart}
-						booleanPlaying={this.state.startPlaying}
-						audioPlay={this.audioPlay}
-					/>
-				) : (
-					""
-				)}
+
+
+				{this.state.startBox === "full" ? (
+					<LlenarBotones/>) : ("")}
 
 				{this.state.winOrLoseZone === "win" ? (
 					<WinZone />
