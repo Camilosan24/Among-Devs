@@ -1,20 +1,4 @@
-
-
-/*camvas princiapal*/
-
-/* .backgroundTaskDivert {
-    background-size: 1370px 630px;
-    background-repeat: no-repeat;
-}
-
-.chooseTask {
-  top: 140px;
-  left: 420px;
-
-} */
-
-canvas {
-  
+.task-container canvas {
     position: absolute;
     top: 31%;
     left: 79%;

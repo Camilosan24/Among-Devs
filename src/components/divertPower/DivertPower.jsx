@@ -47,7 +47,7 @@ class DivertPower extends React.Component {
 	activaEnerg = () => {
 		
 		if (this.estaEnElLimite()) {
-			alert("Tarea completada");
+			this.props.funcResult("win");
 			clearInterval(this.interval);
 			this.interval = null;
 		}
@@ -91,11 +91,10 @@ class DivertPower extends React.Component {
 		ctx.fillRect(this.energia.posicionX, this.energia.posicionY, this.energia.ancho, this.energia.altura);
 	};
 
-	
 
 	/**sonido animaciones */
 
-	
+
 
 	render() {
 		return (
@@ -136,7 +135,7 @@ class DivertPower extends React.Component {
 												>
 													<img
 														id="boton2"
-														className="activarEnergiaBoton"
+														className="activarEnergiaBoton" className={this.state.activar ? "activarEnergiaBoton" : "hide"}
 														src="https://i.ibb.co/qJX9gPM/Boton-Energia-preview-rev-2.png"
 														width="60"
 														height="60"

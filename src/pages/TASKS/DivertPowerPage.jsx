@@ -4,6 +4,7 @@ import "../../styles/style.css";
 import "../../styles/divertpower.css";
 import fondoEnergia from "../../img/ElectricidadFondo.png";
 import soundDivertPower from "../../sounds/AudioCierre.mp3";
+import WinZone from '../../components/esentials/WinZone'
 
 class DivertPowerPage extends React.Component {
 	constructor(props) {
@@ -44,10 +45,8 @@ class DivertPowerPage extends React.Component {
 						</span>
 					</div>
 				</div>
-				{this.state.startBox && <DivertPower/>}
-				{/* <div className={this.state.startBox ? "task" : "taskHide"}>
-					<DivertPower />
-				</div> */}
+				{this.state.startBox && <DivertPower funcResult={this.showResultZone} />}
+				{this.state.winOrLoseZone === "win" && <WinZone />}
 			</React.Fragment>
 		);
 	}
