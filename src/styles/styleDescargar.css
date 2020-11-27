@@ -1,0 +1,53 @@
+canvas {
+  background-color: black;
+  position: absolute;
+  top: 56%;
+  left: 59%;
+  z-index: 3;
+  opacity: 1;
+}
+
+
+
+.child img {
+  left: 61%;
+  position: absolute;
+  height: 20vh;
+  width: 25.5vw;
+  top: 14%;
+  z-index: 6;
+}
+
+.carga img{
+  position: relative;
+  width: 30vw;
+  height: 45vh;
+  left: 50%;
+  z-index: 5;
+}
+
+#butDow{
+  position: absolute;
+  border-radius: 5px;
+  padding: 5px 10px;
+  top: 68%;
+  left: 87%;
+  z-index: 6;
+  border: none;
+}
+
+#butDow:focus{
+  outline: none;
+}
+
+#butDow:hover{
+  background-color: rgb(161, 161, 161);
+  color: white;
+  outline: none;
+}
+.porcent{
+  position: absolute;
+  z-index: 10;
+  top: 53%;
+  font-weight: 1000;
+}

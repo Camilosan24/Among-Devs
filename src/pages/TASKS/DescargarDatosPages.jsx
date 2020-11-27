@@ -1,20 +1,18 @@
 import React from "react";
-import PrimeShields from "../../components/primeShields/PrimeShields";
-import WinZone from "../../components/esentials/WinZone";
-import shieldBack from "../../img/shieldBack.png";
-import abrir from "../../sounds/AudioEnergia.mp3";
-class PrimeShieldsPage extends React.Component {
-	constructor() {
+import DescargarDatos from "../../components/DescargarDatos/DescargarDatos";
+import WinZone from '../../components/esentials/WinZone'
+import backDownload from '../../img/backDownload.png'
+
+class DescargarDatosPages extends React.Component {
+  constructor() {
 		super();
 		this.state = {
 			startBox: false,
 			winOrLoseZone: false,
 		};
-		this.sound = new Audio(abrir);
 	}
 
 	handleClick = () => {
-		this.sound.play();
 		this.setState({
 			startBox: true,
 		});
@@ -23,20 +21,19 @@ class PrimeShieldsPage extends React.Component {
 	showResultZone = (result) => {
 		this.setState({ winOrLoseZone: result });
 	};
-
 	render() {
 		return (
 			<div className="task">
 				<div className="backgroundTaskDivert">
-					{this.state.startBox ? "" : <img src={shieldBack} alt="" />}
+					{this.state.startBox ? "" : <img src={backDownload} alt="" />}
 					<div className="chooseTask">
 						<span className="text-light" onClick={this.handleClick}>
 							Mision Escudos
 						</span>
 					</div>
 				</div>
-				{this.state.startBox && (
-					<PrimeShields funcResult={this.showResultZone} />
+        {this.state.startBox && (
+					<DescargarDatos funcResult={this.showResultZone} />
 				)}
 				{this.state.winOrLoseZone === "win" && <WinZone />}
 			</div>
@@ -44,4 +41,4 @@ class PrimeShieldsPage extends React.Component {
 	}
 }
 
-export default PrimeShieldsPage;
+export default DescargarDatosPages;
