@@ -52,16 +52,15 @@ class DivertPower extends React.Component {
 			this.interval = null;
 		}
 
-		this.energia.posicionY -= 0.4;
-		this.energia.altura += 0.4;
+		this.energia.posicionY -= 0.1;
+		this.energia.altura += 0.1;
 
 		this.limpiar();
 		this.llenarEnergia();
-		this.energiaSound.play();
-
 	}
 
 	activarRectangulo = () => {
+		this.energiaSound.play();
 		//intervalo, permite hacer la ilucion de que se llena a un tiempo determinado
 		console.log(this.interval);
 
