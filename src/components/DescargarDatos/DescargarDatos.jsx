@@ -120,8 +120,8 @@ class DescargarDatos extends React.Component {
                       <img
                         id="barra"
                         src={barraM}
-                        width="370"
-                        height="242"
+                        width="100"
+                        height="100"
                         alt="la barra de carga"
                       />
                       <span className="porcent">{this.state.porcent}%</span>
@@ -130,8 +130,8 @@ class DescargarDatos extends React.Component {
                       <img
                         id="gif"
                         src={this.state.startGif}
-                        width="370"
-                        height="242"
+                        width="100"
+                        height="100"
                         alt="El gif"
                       />
                     </div>
