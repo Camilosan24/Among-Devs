@@ -27,7 +27,7 @@
   box-sizing: border-box;
 }
 #botones {
-  left: 420px;
-  top: -385px;
   position: relative;
+  left: 50%;
+  z-index: 100;
 }
