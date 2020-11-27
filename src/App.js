@@ -12,6 +12,7 @@ import "./styles/bootstrap.min.css";
 import "./styles/magnific-popup.css";
 import "./styles/slicknav.min.css";
 import DescargarDatosPages from "./pages/TASKS/DescargarDatosPages";
+import LlenarBotonesPage from "./pages/TASKS/LlenarBotonesPage";
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Route exact path="/electrical" component={DivertPowerPage} />
 					<Route exact path="/shield" component={PrimeShieldsPage} />
 					<Route exact path="/descargardatos" component={DescargarDatosPages} />
+					<Route exact path="/llenarbotones" component={LlenarBotonesPage} />
 				</Switch>
 			</Layout>
 		</BrowserRouter>

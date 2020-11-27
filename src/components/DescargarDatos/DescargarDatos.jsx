@@ -110,7 +110,7 @@ class DescargarDatos extends React.Component {
                 <div className="col-6">
 
 
-                  {/* <canvas id="game" height="400" width="600"></canvas> */}
+
                   <br />
                   <button id="butDow" onClick={this.handleClick}>
                     Download
