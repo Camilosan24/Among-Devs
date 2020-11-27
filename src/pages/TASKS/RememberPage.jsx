@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import RememberTask from "../../components/rememberTask/rememberTask";
-=======
-import RememberTask from '../../components/rememberTask/rememberTask';
->>>>>>> b0828c90d10728eb6103550427512a86546c0e99
 import "../../styles/style.css";
 import "../../styles/rememberOrderTask.css";
 import Back from "../../img/fontReactor.png";
@@ -24,24 +20,15 @@ class RememberPage extends React.Component {
 		this.sound = new Audio(openTask);
 	}
 
-<<<<<<< HEAD
 	audioPlay=()=>{
 		this.sound.play();
 	}
 	showTasks = (params) => {
-=======
-
-	audioPlay = () => {
-		this.sound.play()
-	}
-	handleClick = () => {
->>>>>>> b0828c90d10728eb6103550427512a86546c0e99
 		this.audioPlay()
 		this.setState({ startBox: params });
 	};
 
 	hideButtonStart = (params) => {
-<<<<<<< HEAD
 		this.setState({ startPlaying: params });
 	};
 
@@ -84,29 +71,6 @@ class RememberPage extends React.Component {
 				) : (
 					""
 				)}
-=======
-		this.setState({ startPlaying: params })
-	}
-
-	showResultZone = (result) => {
-		this.setState({ winOrLoseZone: result })
-	}
-	render() {
-		return (
-			<div id="background">
-				<div className="backgroundTask">
-					{this.state.startBox ? "" : <img src={Back} alt="" />}
-					<div className="chooseTask">
-						<span className="text-light" onClick={this.handleClick}>
-							Mision Reactor
-						</span>
-					</div>
-				</div>
-				{this.state.startBox && <RememberTask hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} funcResult={this.showResultZone} />}
-				{this.state.startBox && <ButtonStart hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} audioPlay={this.audioPlay} />}
-
-				{ this.state.winOrLoseZone === 'win' ? <WinZone /> : this.state.winOrLoseZone === 'lose' ? <LoseZone /> : ""}
->>>>>>> b0828c90d10728eb6103550427512a86546c0e99
 			</div>
 		);
 	}
