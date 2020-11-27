@@ -1,5 +1,6 @@
 import React from "react";
 import DescargarDatos from "../../components/DescargarDatos/DescargarDatos";
+<<<<<<< HEAD
 import WinZone from "../../components/esentials/WinZone";
 import ChooseTask from '../../components/esentials/ChooseTask'
 import backDownload from "../../img/backDownload.png";
@@ -44,6 +45,21 @@ class DescargarDatosPages extends React.Component {
 			</div>
 		);
 	}
+=======
+
+class DescargarDatosPages extends React.Component {
+  render() {
+    return (
+      <div ClassName="background">
+        <div ClassName="backgroundTask">
+          <div ClassName="Task">
+            <DescargarDatos />
+          </div>
+        </div>
+      </div>
+    );
+  }
+>>>>>>> b0828c90d10728eb6103550427512a86546c0e99
 }
 
 export default DescargarDatosPages;
