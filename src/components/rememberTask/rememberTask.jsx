@@ -5,15 +5,15 @@ import Grey from "../../img/Grey.svg";
 import backTask from "../../img/backTask.png";
 import UtilFunctions from "../../functions/UtilFunctions";
 import UI from "../../functions/UI";
-import taskCompleted from '../../sounds/taskCompleted.mp3'
-import onPressButton from '../../sounds/onPressButton.mp3'
-import swal from 'sweetalert';
+import taskCompleted from "../../sounds/taskCompleted.mp3";
+import onPressButton from "../../sounds/onPressButton.mp3";
 
 class RememberTask extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			hideOrShow: false,
+			activeOrNot: false,
 		};
 		this.ui1 = null;
 		this.ui2 = null;
@@ -25,7 +25,7 @@ class RememberTask extends React.Component {
 		this.utilFunctions = null;
 		this.valuesIn = [];
 		this.setTimes = { set1: null, set2: null, set3: null, set4: null };
-		this.soundButton = new Audio(onPressButton)
+		this.soundButton = new Audio(onPressButton);
 		this.soundWin = new Audio(taskCompleted);
 	}
 
@@ -76,7 +76,7 @@ class RememberTask extends React.Component {
 	};
 
 	startGame = () => {
-		this.setState({ hideOrShow: false });
+		this.setState({ hideOrShow: false, activeOrNot: false });
 		this.nextLevel = false;
 		this.setTimes.set1 = setTimeout(() => {
 			this.utilFunctions.empezarGame(this.level);
@@ -85,8 +85,8 @@ class RememberTask extends React.Component {
 		this.setTimes.set2 = setTimeout(() => {
 			this.setState({ hideOrShow: true });
 			this.nextLevel = true;
-			swal("¡Elegir opcion!");
-		}, 2000 + (this.level * 700));
+			this.setState({ activeOrNot: true });
+		}, 2000 + this.level * 700);
 	};
 
 	buttonHandleClick = (e) => {
@@ -150,10 +150,7 @@ class RememberTask extends React.Component {
 				onLoad={this.handleLoad}
 			>
 				<div className="hero-slider owl-carousel">
-					<div
-						className="hero-item set-bg d-flex align-items-center justify-content-center text-center"
-						data-setbg="../img/banner.jpg"
-					>
+					<div className="hero-item set-bg d-flex align-items-center justify-content-center text-center">
 						<div className="container">
 							<div id="playZone"></div>
 							<div className="row">
@@ -247,7 +244,14 @@ class RememberTask extends React.Component {
 												/>
 											</div>
 										</div>
-										<div className="button-box-2" id="button-box-2">
+										<div
+											className={
+												this.state.activeOrNot
+													? "button-box-2"
+													: "highOpasity button-box-2"
+											}
+											id="button-box-2"
+										>
 											<div className="row justify-content-center">
 												<button
 													className="btn-game"

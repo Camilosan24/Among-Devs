@@ -20,41 +20,38 @@ class RememberPage extends React.Component {
 	}
 
 
-
-
-
-	audioPlay = ()=>{
+	audioPlay = () => {
 		this.sound.play()
 	}
-	handleClick= () => {
+	handleClick = () => {
 		this.audioPlay()
 		this.setState({
 			startBox: true
 		})
 	}
-	hideButtonStart = (params)=>{
-		this.setState({startPlaying: params})
+
+	hideButtonStart = (params) => {
+		this.setState({ startPlaying: params })
 	}
 
-	showResultZone = (result)=>{
-		this.setState({winOrLoseZone: result})
+	showResultZone = (result) => {
+		this.setState({ winOrLoseZone: result })
 	}
 	render() {
 		return (
-			<div className="background">
+			<div id="background">
 				<div className="backgroundTask">
-					{this.state.startBox ? "" :<img src={ Back } alt="" />}
+					{this.state.startBox ? "" : <img src={Back} alt="" />}
 					<div className="chooseTask">
 						<span className="text-light" onClick={this.handleClick}>
 							Mision Reactor
 						</span>
 					</div>
 				</div>
-				<div className={this.state.startBox ? "task":"taskHide"}>
-					<RememberTask hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} funcResult={this.showResultZone}/>
-					<ButtonStart hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} audioPlay={this.audioPlay}/>
-				</div>
-			{ this.state.winOrLoseZone === 'win' ? <WinZone/>: this.state.winOrLoseZone === 'lose' ? <LoseZone/> : ""}
+				{this.state.startBox && <RememberTask hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} funcResult={this.showResultZone} />}
+				{this.state.startBox && <ButtonStart hideButtonStart={this.hideButtonStart} booleanPlaying={this.state.startPlaying} audioPlay={this.audioPlay} />}
+
+				{ this.state.winOrLoseZone === 'win' ? <WinZone /> : this.state.winOrLoseZone === 'lose' ? <LoseZone /> : ""}
 			</div>
 		);
 	}

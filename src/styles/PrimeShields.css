@@ -1,0 +1,71 @@
+
+.boton-cerrar img{
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  top: 160px; 
+  left: 375px; 
+} 
+
+.boton-abrir img{
+  position: absolute;
+  width: 137px;
+  height: 110px;
+  top: 245px; 
+  left: 202px;
+  box-shadow: #eeff00;
+}
+
+.shieldBox {
+    position: relative;
+    height: 450px;
+    width: 450px;
+    left: 60%;
+
+  }
+
+.Hexagono1 img {
+  position: absolute;
+  width:238px;
+  height: 190px;
+  top: 42%;
+  left: 99%;
+}
+
+
+.Hexagono2 img {   /**medida del hexagono*/
+  position: absolute;
+  width:250px;
+  height: 202px;
+  top: 26%;
+  left: 76.5%;
+}
+
+.Hexagono3 img {
+  position: absolute;
+  width:222px;
+  height: 174px;
+  top: 15.5%;
+  left: 99.2%;
+}
+
+.Hexagono4 img {
+  position: absolute;
+  width:170px;
+  height:159px;
+  top: 18%;
+  left: 64.5%;
+}
+
+p {
+  font-size: 1px;
+}
+
+.audios{
+  display: none
+}
+
+.container{
+  position: relative;
+  top: -10%;
+}

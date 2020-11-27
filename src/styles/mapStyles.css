@@ -19,7 +19,7 @@
    left: 4%;
 }
 
-.reactor:hover,.electrical:hover, .admin:hover{
+.reactor:hover,.electrical:hover, .admin:hover, .shield:hover{
    box-shadow: 1px 1px 10px 1px yellow;
 }
 
@@ -39,4 +39,13 @@
    z-index: 99;
    top: 51.5%;
    left: 59%;
+}
+
+.shield{
+   position: absolute;
+   width: 9.2vw;
+   height: 16.5vh;
+   z-index: 99;
+   top: 66%;
+   left: 69.7%;
 }

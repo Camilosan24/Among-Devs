@@ -130,7 +130,7 @@
 	display: flex;
 	position: fixed;
 	top: 45%;
-	left: 45%;
+	left: 40%;
 	font-size: 50px;
 }
 .win a:hover {
@@ -173,7 +173,6 @@
 	transition: 1s;
 }
 .task{
-
 	transition: 2s;
 }
 
@@ -188,4 +187,8 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: pre;
+}
+
+.highOpasity{
+	opacity: 0.1;
 }

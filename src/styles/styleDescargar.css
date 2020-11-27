@@ -1,21 +1,25 @@
-canvas{
-    background-color: black;
+canvas {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
 }
 
-.child{
-  
-  
-  left: 50px;
+
+
+.child {
+
+
+  left: 0px;
   position: relative;
-  top:-790px;
-/*   
-  left: 50px;
-  position: relative;
-  top:-370px; */
-  
+  top: 0px;
+
+
 }
-.carga{
-  left: 3px;
+
+.carga {
+  left: 0px;
   position: relative;
-  top:-426px;
+  top: 0px;
 }

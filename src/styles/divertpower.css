@@ -1,0 +1,105 @@
+
+
+/*camvas princiapal*/
+
+/* .backgroundTaskDivert {
+    background-size: 1370px 630px;
+    background-repeat: no-repeat;
+}
+
+.chooseTask {
+  top: 140px;
+  left: 420px;
+
+} */
+
+canvas {
+  background-color: #eeff00;
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    z-index: -1;
+}
+
+.botonCerrar img{
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  top: -10%;
+  left: -10%;
+}
+
+.botonAbrir{
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 50px;
+  height: 25px;
+  box-shadow: #eeff00;
+}
+
+.button-container{
+    display:flex;
+    display:inline-block;
+    position:relative;
+    }
+
+.fondo img{
+  position: absolute;
+  width: 540px;
+  height: 520px;
+  top: 5px;
+  left: 400px;
+}
+
+.button-container .fondo{
+  z-index: 1;
+}
+
+.button-container .activarEnergia{
+  z-index: 3;
+  width:52px;
+  height: 52px;
+  position: absolute;
+  top: 415px;
+  left: 863px;
+}
+
+.button-container .activarEnergiaBoton{
+  z-index: 3;
+  width:72px;
+  height: 55px;
+  position: absolute;
+  top: 362px;
+  left: 851px;
+  display: none;
+}
+
+.audios{
+  display: none
+}
+
+.hide{
+  display: none;
+}
+
+.buttons{
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  top: 60.5%;
+  left: 78.3%;
+  z-index: 100;
+}
+
+.contenido{
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.task-container{
+  position: relative;
+  z-index: 2;
+}
+
