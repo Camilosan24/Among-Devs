@@ -1,28 +1,34 @@
 import React from "react";
 import "../../styles/divertpower.css";
+import energiaSound from '../../../src/sounds/AudioEnergia.mp3';
 
 
 class DivertPower extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.canvas = React.createRef();
 		this.state = {
 			closeGame: false,
-			botonDos: false
+			activar: false,
+
 		};
+
+		this.energiaSound = new Audio(energiaSound);
 
 		/*this.canvas = document.getElementById("electricidad");*/
 
+		//wenas
 		//se crea un objeto para asignar los valores del rectangulo
 
 		this.energia = {
 			posicionX: 0,
-			posicionY: 100,
+			posicionY: 40,
 			ancho: 50,
-			altura: 20,
-		};
+			altura: 10
+		}
 
-		this.LIMITE_CARGA = 65;
+		this.LIMITE_CARGA = 0;
 
 		this.interval = null;
 	}
@@ -33,68 +39,63 @@ class DivertPower extends React.Component {
 
 	drawRectInCanvas = () => {
 		const ctx = this.canvas.current.getContext("2d");
-		ctx.fillRect(5, 5, 200, 200);
-		ctx.fillStyle = "#77EF0C";
+		ctx.fillStyle = "rgb(0, 0,0)";
+		ctx.fillRect(this.energia.posicionX, this.energia.posicionY, this.energia.ancho, this.energia.altura);
+
 	};
 
-	//funciones
+	activaEnerg = () => {
+		
+		if (this.estaEnElLimite()) {
+			alert("Tarea completada");
+			clearInterval(this.interval);
+			this.interval = null;
+		}
+
+		this.energia.posicionY -= 0.4;
+		this.energia.altura += 0.4;
+
+		this.limpiar();
+		this.llenarEnergia();
+		this.energiaSound.play();
+
+	}
 
 	activarRectangulo = () => {
 		//intervalo, permite hacer la ilucion de que se llena a un tiempo determinado
+		console.log(this.interval);
 
 		if (this.interval === null) {
-			this.interval = setInterval(function () {
-				if (this.estaEnElLimite) {
-					alert("Tarea completada");
-					clearInterval(this.interval);
-					this.interval = null;
-				}
-
-				this.energia.posicionY -= 0.4;
-				this.energia.altura += 0.4;
-
-				this.limpiar();
-				this.llenarEnergia();
-			}, 1);
+			this.interval = setInterval(this.activaEnerg, 1);
 		} else {
 			clearInterval(this.interval);
 		}
 	};
- 
- 
+
+
 	estaEnElLimite = () => {
+		       //1                        //65
 		return this.energia.posicionY <= this.LIMITE_CARGA;
 	};
 
 	limpiar = () => {
-		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		const ctx = this.canvas.current.getContext("2d");
+		ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	};
 
+	//pinta el bisho
 	llenarEnergia = () => {
 		//    poscisiones en x y ancho y alto
-		this.ctx.fillRect(this.posicionX, this.posicionY, this.ancho, this.altura);
+		const ctx = this.canvas.current.getContext("2d");
+		ctx.fillStyle = "rgb(234, 234, 84)";
+		ctx.fillRect(this.energia.posicionX, this.energia.posicionY, this.energia.ancho, this.energia.altura);
 	};
 
-	/**ocultar juego */
-
-	botonDos = () => {
-		if (this.botonDos === true) {
-			this.style.display = "block";
-		}
 	
-	};
 
 	/**sonido animaciones */
 
-	sonidoEnergia = () => {
-		let audio = document.getElementById("audioEnergia");
-		audio.play();
-	};
-
-	sonidoCierre = () => {
-		let audio = document.getElementById("audioCierre");
-		audio.play();
-	};
+	
 
 	render() {
 		return (
@@ -128,26 +129,11 @@ class DivertPower extends React.Component {
 											</audio>
 										</div>
 
-										<div
-											className={this.state.closeGame ? "hide" : ""}
-											id="divEnergia"
-										>
-											<div className="botonCerrar">
-												{" "}
-												{/*permite cerrar el juego una vez se ejecute*/}
-												<a
-													href="#none"
-													onClick={() => this.setState({ closeGame: true })}
+										<div>
+											<div>
+												<a href="#none"
+													className={this.state.botonDos ? "none" : ""}
 												>
-													<img
-														src="https://i.ibb.co/wzMh2sv/Cerrar.png"
-														alt="c-231"
-													/>
-												</a>
-											</div>
-
-											<div className="buttons">
-												<a href="#hide" onClick={this.botonDos}>
 													<img
 														id="boton2"
 														className="activarEnergiaBoton"
@@ -156,8 +142,16 @@ class DivertPower extends React.Component {
 														height="60"
 														alt="c-242"
 													/>
+
 												</a>
-												<a href="#none" onClick={this.activar}>
+											</div>
+
+											<div>
+												<a href="#none"
+													className={this.state.activar ? "hide" : ""}
+													onClick={() => this.setState({ activar: true })}
+												>
+
 													<img
 														id="activar"
 														onClick={this.activarRectangulo}
@@ -170,10 +164,11 @@ class DivertPower extends React.Component {
 													{/*nos permite activar el juego y ocultar un boton*/}
 												</a>
 											</div>
+
 											<canvas
 												id="electricidad"
 												ref={this.canvas}
-												height="200"
+												height="50"
 												width="50"
 											></canvas>
 										</div>
