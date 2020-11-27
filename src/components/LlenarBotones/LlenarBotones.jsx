@@ -17,9 +17,29 @@ class LlenarBotones extends React.Component {
         this.bot9 = React.createRef()
         this.bot10 = React.createRef()
 
-        this.state = {
-            global: 1
+        this.lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        this.listaNueva = lista.sort(function () { return Math.random() - 0.5 });
+        for (var i = 0; i < listaNueva.length; i++) {
+            botUno.value = listaNueva[0]
+            botDos.value = listaNueva[1]
+            botTres.value = listaNueva[2]
+            botCuatro.value = listaNueva[3]
+            botCinco.value = listaNueva[4]
+            botSeis.value = listaNueva[5]
+            botSiete.value = listaNueva[6]
+            botOcho.value = listaNueva[7]
+            botNueve.value = listaNueva[8]
+            botDiez.value = listaNueva[9]
+
+            this.state = {
+                global: 1
+            }
         }
+
+
+
+
+
     }
 
     handleClick = (e) => {
@@ -52,16 +72,16 @@ class LlenarBotones extends React.Component {
 
                                         <div className="container" >
                                             <div id="botones">
-                                                <input type='button' name='boton7' id="siete" value='7' ref={this.bot7} onClick={this.handleClick} />
-                                                <input type='button' name='boton4' id="cuatro" value='4' ref={this.bot4} onClick={this.handleClick} />
-                                                <input type='button' name='boton10' id="diez" value='10' ref={this.bot10} onClick={this.handleClick} />
-                                                <input type='button' name='boton3' id="tres" value='3' ref={this.bot3} onClick={this.handleClick} />
-                                                <input type='button' name='boton5' id="cinco" value='5' ref={this.bot5} onClick={this.handleClick} /><br />
-                                                <input type='button' name='boton1' id="uno" value='1' ref={this.bot1} onClick={this.handleClick} />
-                                                <input type='button' name='boton6' id="seis" value='6' ref={this.bot7} onClick={this.handleClick} />
-                                                <input type='button' name='boton8' id="ocho" value='8' ref={this.bot8} onClick={this.handleClick} />
-                                                <input type='button' name='boton2' id="dos" value='2' ref={this.bot2} onClick={this.handleClick} />
-                                                <input type='button' name='boton9' id="nueve" value='9' ref={this.bot9} onClick={this.handleClick} />
+                                                <input type='button' name='boton7' id="siete" value='' ref={this.bot7} onClick={this.handleClick} />
+                                                <input type='button' name='boton4' id="cuatro" value='' ref={this.bot4} onClick={this.handleClick} />
+                                                <input type='button' name='boton10' id="diez" value='' ref={this.bot10} onClick={this.handleClick} />
+                                                <input type='button' name='boton3' id="tres" value='' ref={this.bot3} onClick={this.handleClick} />
+                                                <input type='button' name='boton5' id="cinco" value='' ref={this.bot5} onClick={this.handleClick} /><br />
+                                                <input type='button' name='boton1' id="uno" value='' ref={this.bot1} onClick={this.handleClick} />
+                                                <input type='button' name='boton6' id="seis" value='' ref={this.bot7} onClick={this.handleClick} />
+                                                <input type='button' name='boton8' id="ocho" value='' ref={this.bot8} onClick={this.handleClick} />
+                                                <input type='button' name='boton2' id="dos" value='' ref={this.bot2} onClick={this.handleClick} />
+                                                <input type='button' name='boton9' id="nueve" value='' ref={this.bot9} onClick={this.handleClick} />
                                             </div>
                                         </div>
                                     </main>
