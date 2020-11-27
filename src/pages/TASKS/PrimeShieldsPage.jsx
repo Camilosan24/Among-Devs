@@ -3,6 +3,8 @@ import PrimeShields from "../../components/primeShields/PrimeShields";
 import WinZone from "../../components/esentials/WinZone";
 import shieldBack from "../../img/shieldBack.png";
 import abrir from "../../sounds/AudioEnergia.mp3";
+import ChooseTask from "../../components/esentials/ChooseTask";
+import "../../styles/style.css";
 class PrimeShieldsPage extends React.Component {
 	constructor() {
 		super();
@@ -20,26 +22,29 @@ class PrimeShieldsPage extends React.Component {
 		});
 	};
 
+	showTask = (option) => {
+		this.setState({
+			startBox: option,
+		});
+	};
 	showResultZone = (result) => {
 		this.setState({ winOrLoseZone: result });
 	};
 
 	render() {
 		return (
-			<div className="task">
+			<React.Fragment>
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={shieldBack} alt="" />}
-					<div className="chooseTask">
-						<span className="text-light" onClick={this.handleClick}>
-							Mision Escudos
-						</span>
+					<div className="tasks">
+						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask} />
 					</div>
 				</div>
 				{this.state.startBox && (
 					<PrimeShields funcResult={this.showResultZone} />
 				)}
 				{this.state.winOrLoseZone === "win" && <WinZone />}
-			</div>
+			</React.Fragment>
 		);
 	}
 }

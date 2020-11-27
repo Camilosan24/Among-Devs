@@ -1834,3 +1834,33 @@ ol {
 body::-webkit-scrollbar {
 	width: 0;
 }
+.tasks{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	top: 50%;
+	left: 40%;
+	z-index: 1;
+}
+
+.chooseTask{
+	background-color: rgba(77, 70, 70, 0.658);
+	display: block;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	transition: 1s;
+	overflow: hidden;
+	margin: 10px;
+	text-overflow: ellipsis;
+	white-space: pre;
+}
+.chooseTask img{
+	padding: 0;
+	margin: 0;
+}
+.chooseTask:hover{
+	box-shadow: 5px 5px 10px 1px yellow;
+	width: 400px;
+}

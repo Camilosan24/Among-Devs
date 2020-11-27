@@ -19,7 +19,7 @@
    left: 4%;
 }
 
-.reactor:hover,.electrical:hover, .admin:hover, .shield:hover{
+.reactor:hover,.electrical:hover, .admin:hover, .shield:hover,.stabilize:hover{
    box-shadow: 1px 1px 10px 1px yellow;
 }
 
@@ -48,4 +48,13 @@
    z-index: 99;
    top: 66%;
    left: 69.7%;
+}
+
+.stabilize{
+   position: absolute;
+   width: 7vw;
+   height: 14.9vh;
+   z-index: 99;
+   top: 36.7%;
+   left: 88%;
 }

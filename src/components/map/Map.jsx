@@ -14,6 +14,7 @@ class Map extends React.Component {
 					<Link to="/electrical"><div className="electrical"></div></Link>
 					<Link to="/admin"><div className="admin"></div></Link>
 					<Link to="/shield"><div className="shield"></div></Link>
+					<Link to="/stabilize"><div className="stabilize"></div></Link>
 				</div>
 			</div>
 		);

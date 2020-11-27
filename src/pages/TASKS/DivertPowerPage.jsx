@@ -4,7 +4,8 @@ import "../../styles/style.css";
 import "../../styles/divertpower.css";
 import fondoEnergia from "../../img/ElectricidadFondo.png";
 import soundDivertPower from "../../sounds/AudioCierre.mp3";
-import WinZone from '../../components/esentials/WinZone'
+import ChooseTask from '../../components/esentials/ChooseTask'
+import WinZone from "../../components/esentials/WinZone";
 
 class DivertPowerPage extends React.Component {
 	constructor(props) {
@@ -27,6 +28,12 @@ class DivertPowerPage extends React.Component {
 		});
 	};
 
+	showTask = (option) => {
+		this.setState({
+			startBox: option,
+		});
+	};
+
 	hideButtonStart = (params) => {
 		this.setState({ startPlaying: params });
 	};
@@ -39,13 +46,13 @@ class DivertPowerPage extends React.Component {
 			<React.Fragment>
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={fondoEnergia} alt="" />}
-					<div className="chooseTask">
-						<span className="text-light" onClick={this.handleClick}>
-							Mision Electricidad
-						</span>
+					<div className="tasks">
+						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask} />
 					</div>
 				</div>
-				{this.state.startBox && <DivertPower funcResult={this.showResultZone} />}
+				{this.state.startBox && (
+					<DivertPower funcResult={this.showResultZone} />
+				)}
 				{this.state.winOrLoseZone === "win" && <WinZone />}
 			</React.Fragment>
 		);

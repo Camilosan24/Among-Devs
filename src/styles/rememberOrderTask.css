@@ -148,23 +148,7 @@
 .lose a:hover {
 	color: red;
 }
-.chooseTask{
-	background-color: rgba(77, 70, 70, 0.658);
-	position: absolute;
-	top: 50%;
-	left: 37%;
-	width: 50px;
-	height: 40px;
-	transform: rotate(50%);
-	transition: 1s;
-	overflow: hidden;
-}
 
-.chooseTask:hover{
-	box-shadow: 5px 5px 10px 1px yellow;
-	position: absolute;
-	width: 400px;
-}
 
 .taskHide{
 	height: 100vh;
@@ -183,11 +167,6 @@
 	font-size: 25px;
 }
 
-.chooseTask{
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: pre;
-}
 
 .highOpasity{
 	opacity: 0.1;

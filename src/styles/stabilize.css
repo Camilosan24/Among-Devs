@@ -1,0 +1,27 @@
+
+.task-space .target img {
+   position: relative;
+   z-index: 100;
+}
+
+.task-space .puntero img{
+   position: absolute;
+   z-index: 100;
+}
+.seleccionar {
+   width: 68px;
+   height: 137px;
+   right: 185px;
+   position: absolute;
+   top: 206px;
+}
+
+.indentifi {
+   background-color: black;
+   width: 68px;
+   height: 57px;
+   position: absolute;
+   top: 63%;
+   left: 28%;
+   z-index: 200;
+}

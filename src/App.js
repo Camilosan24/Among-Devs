@@ -7,6 +7,7 @@ import RememberPage from './pages/TASKS/RememberPage';
 import DivertPowerPage from './pages/TASKS/DivertPowerPage';
 import PrimeShieldsPage from './pages/TASKS/PrimeShieldsPage';
 import DescargarDatosPages from './pages/TASKS/DescargarDatosPages';
+import StabilizeSteeringPage from './pages/TASKS/StabilizeSteeringPage';
 import "./styles/style.css";
 import "./styles/animate.css";
 import "./styles/bootstrap.min.css";
@@ -25,6 +26,7 @@ function App() {
 					<Route exact path="/electrical" component={DivertPowerPage} />
 					<Route exact path="/shield" component={PrimeShieldsPage} />
 					<Route exact path="/admin" component={DescargarDatosPages} />
+					<Route exact path="/stabilize" component={StabilizeSteeringPage} />
 				</Switch>
 			</Layout>
 		</BrowserRouter>

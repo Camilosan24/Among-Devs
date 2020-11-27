@@ -1,10 +1,11 @@
 import React from "react";
 import DescargarDatos from "../../components/DescargarDatos/DescargarDatos";
-import WinZone from '../../components/esentials/WinZone'
-import backDownload from '../../img/backDownload.png'
+import WinZone from "../../components/esentials/WinZone";
+import ChooseTask from '../../components/esentials/ChooseTask'
+import backDownload from "../../img/backDownload.png";
 
 class DescargarDatosPages extends React.Component {
-  constructor() {
+	constructor() {
 		super();
 		this.state = {
 			startBox: false,
@@ -18,6 +19,12 @@ class DescargarDatosPages extends React.Component {
 		});
 	};
 
+	showTask = (option) => {
+		this.setState({
+			startBox: option,
+		});
+	};
+
 	showResultZone = (result) => {
 		this.setState({ winOrLoseZone: result });
 	};
@@ -26,13 +33,11 @@ class DescargarDatosPages extends React.Component {
 			<div className="task">
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={backDownload} alt="" />}
-					<div className="chooseTask">
-						<span className="text-light" onClick={this.handleClick}>
-							Mision Escudos
-						</span>
+					<div className="tasks">
+						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask} />
 					</div>
 				</div>
-        {this.state.startBox && (
+				{this.state.startBox && (
 					<DescargarDatos funcResult={this.showResultZone} />
 				)}
 				{this.state.winOrLoseZone === "win" && <WinZone />}
