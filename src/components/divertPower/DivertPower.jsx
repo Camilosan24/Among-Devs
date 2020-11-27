@@ -45,7 +45,6 @@ class DivertPower extends React.Component {
 	};
 
 	activaEnerg = () => {
-		
 		if (this.estaEnElLimite()) {
 			this.props.funcResult("win");
 			clearInterval(this.interval);
@@ -134,7 +133,7 @@ class DivertPower extends React.Component {
 												>
 													<img
 														id="boton2"
-														className="activarEnergiaBoton" className={this.state.activar ? "activarEnergiaBoton" : "hide"}
+														className={this.state.activar ? "activarEnergiaBoton" : "hide"}
 														src="https://i.ibb.co/qJX9gPM/Boton-Energia-preview-rev-2.png"
 														width="60"
 														height="60"
