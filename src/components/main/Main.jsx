@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/main.css";
+
 
 class Main extends React.Component {
 	render() {
@@ -16,8 +16,14 @@ class Main extends React.Component {
 							<p>
 								El siguiente juego es una pequeña representacion de Among Us donde se recrearon 6 tareas del video juego, con
 								diferente nivel de dificuldad desarrollado principalmente en la libreria de React.js para el curso de DevsHouse
-								a cargo de IBACREA, !espero lo disfrutes! 					
+								a cargo de IBACREA.
 							</p>
+
+							<div className="etiquetaA">
+								<p>
+									!Espero lo disfrutes!
+							    </p>
+							</div>
 						</div>
 					</div>
 				</div>
