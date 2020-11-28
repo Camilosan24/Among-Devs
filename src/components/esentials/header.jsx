@@ -9,7 +9,6 @@ export default class Header extends Component {
 		this.sound = new Audio(songInicio)
 	}
 
-
 	componentDidMount(){
 		this.sound.volume = 0.2;
 		this.sound.play()
