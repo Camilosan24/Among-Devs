@@ -17,6 +17,7 @@ body {
 	position: relative;
 	background: url("../img/banner.jpg");
 	background-size: cover;
+	position: fixed;
 	position: relative;
 }
 
@@ -1862,5 +1863,5 @@ body::-webkit-scrollbar {
 }
 .chooseTask:hover{
 	box-shadow: 5px 5px 10px 1px yellow;
-	width: 400px;
+	width: 4050px;
 }

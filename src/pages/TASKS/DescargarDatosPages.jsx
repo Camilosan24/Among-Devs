@@ -33,9 +33,9 @@ class DescargarDatosPages extends React.Component {
 			<div className="task">
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={backDownload} alt="" />}
-					<div className="tasks">
+					{!this.state.startBox && <div className="tasks">
 						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask} />
-					</div>
+					</div>}
 				</div>
 				{this.state.startBox && (
 					<DescargarDatos funcResult={this.showResultZone} />

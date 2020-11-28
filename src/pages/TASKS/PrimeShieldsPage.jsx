@@ -36,9 +36,9 @@ class PrimeShieldsPage extends React.Component {
 			<React.Fragment>
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={shieldBack} alt="" />}
-					<div className="tasks">
+					{!this.state.startBox && <div className="tasks">
 						<ChooseTask name={"Mision "} value={true} showFunc={this.showTask} />
-					</div>
+					</div>}
 				</div>
 				{this.state.startBox && (
 					<PrimeShields funcResult={this.showResultZone} />

@@ -28,9 +28,9 @@ class StabilizeSteeringPage extends React.Component {
 			<React.Fragment>
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={fondo} alt="" />}
-					<div className="tasks">
+					{!this.state.startBox && <div className="tasks">
 						<ChooseTask name={"Mision Calibracion"} value={true} showFunc={this.showTask}/>
-					</div>
+					</div>}
 				</div>
 				{this.state.startBox && (
 					<StabilizeSteering funcResult={this.showResultZone} />

@@ -41,18 +41,19 @@ class RememberPage extends React.Component {
 			<div className="task">
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={Back} alt="" />}
-					<div className="tasks">
+					{!this.state.startBox && <div className="tasks">
 						<ChooseTask
 							name={"Mision Remember positions"}
 							value={"remember"}
 							showFunc={this.showTasks}
+							hideButtonStart={this.hideButtonStart}
 						/>
 						<ChooseTask
 							name={"Mision Order numbers"}
 							value={"full"}
 							showFunc={this.showTasks}
 						/>
-					</div>
+					</div>}
 				</div>
 				{this.state.startBox === "remember" ? (
 					<RememberTask
@@ -64,7 +65,7 @@ class RememberPage extends React.Component {
 					""
 				)}
 
-
+				{this.state.startPlaying ? "": this.state.startBox === 'remember' ? <ButtonStart audioPlay={this.audioPlay} hideButtonStart={this.hideButtonStart}/> : ""}
 				{this.state.startBox === "full" ? (
 					<LlenarBotones/>) : ("")}
 
