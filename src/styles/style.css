@@ -34,7 +34,8 @@ h5,
 h6 {
 	margin: 0;
 	color: #111111;
-	font-weight: 500;
+	font-weight: 2000px;
+	font-size: 2000px;
 }
 
 
@@ -524,19 +525,31 @@ ol {
 	padding-top: 125px;
 }
 
+.hero-item h1 { /*-----------------------------------------------------------------------------*/
+	font-family: 'Nerko One', cursive;
+	font-size: 150px;
+	color: rgb(221, 205, 205);
+	font-weight: 500%;
+	line-height: 1;
+	position: relative;
+	margin-top: -5%;
+	opacity: 8;
+}
+
 .hero-item h2 {
-	font-size: 160px;
+	font-family: 'Nerko One', cursive;
+	font-size: 100px;
 	color: #fff;
 	font-weight: 500;
 	line-height: 1;
 	position: relative;
-	top: 100px;
+	top: 80px;
 	opacity: 1;
 }
 
 .hero-item p {
 	font-size: 24px;
-	color: rgba(255, 255, 255, 0.4);
+	color: #b8c0b8;
 	font-weight: 500;
 	margin-bottom: 70px;
 	position: relative;
@@ -544,9 +557,10 @@ ol {
 	opacity: 1;
 }
 
+
 .hero-item .site-btn {
 	position: relative;
-	top: 50px;
+	margin-top: -10%;
 	opacity: 0;
 }
 
