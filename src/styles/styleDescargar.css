@@ -67,9 +67,17 @@ canvas {
     background-color: black;
     position: absolute;
     top: 53%;
-    left: 66%;
+    left: 68%;
     width: 300px;
     z-index: 3;
     opacity: 1;
+  }
+
+  .porcent{
+    position: absolute;
+    z-index: 10;
+    top: 52%;
+    left: 95%;
+    font-weight: 1000;
   }
 }
