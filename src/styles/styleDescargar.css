@@ -51,3 +51,25 @@ canvas {
   top: 53%;
   font-weight: 1000;
 }
+
+@media screen and (max-width: 1367px){
+
+  .child img {
+    left: 70%;
+    position: absolute;
+    height: 20.4vh;
+    width: 26vw;
+    top: 18%;
+    z-index: 6;
+  }
+
+  canvas {
+    background-color: black;
+    position: absolute;
+    top: 53%;
+    left: 66%;
+    width: 300px;
+    z-index: 3;
+    opacity: 1;
+  }
+}
