@@ -3,9 +3,9 @@ import DivertPower from "../../components/divertPower/DivertPower";
 import "../../styles/style.css";
 import "../../styles/divertpower.css";
 import fondoEnergia from "../../img/ElectricidadFondo.png";
-import soundDivertPower from "../../sounds/AudioCierre.mp3";
 import ChooseTask from '../../components/esentials/ChooseTask'
 import WinZone from "../../components/esentials/WinZone";
+import openTask from "../../sounds/openTask.mp3";
 
 class DivertPowerPage extends React.Component {
 	constructor(props) {
@@ -15,7 +15,7 @@ class DivertPowerPage extends React.Component {
 			startPlaying: false,
 			winOrLoseZone: false,
 		};
-		this.sound = new Audio(soundDivertPower);
+		this.sound = new Audio(openTask);
 	}
 
 	audioPlay = () => {
@@ -29,6 +29,7 @@ class DivertPowerPage extends React.Component {
 	};
 
 	showTask = (option) => {
+		this.audioPlay()
 		this.setState({
 			startBox: option,
 		});

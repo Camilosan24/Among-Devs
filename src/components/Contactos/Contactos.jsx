@@ -156,16 +156,19 @@ class Contactos extends React.Component {
 						<form
 							action="santiagogui1909@gmail.com"
 							method="post"
-							enctype="text/plain"
 						>
-							<img src="https://i.ibb.co/GnvDYxT/logo-terminator.png" />
-							<h2>Comentarios</h2>
-							<input type="text" name="Nombre" placeholder="Nombre" />
-							<input type="text" name="Correo" placeholder="Correo" />
-							<input type="text" name="Telefono" placeholder="Telefono" />
+							<h2 className="comentarios-div">Comentarios</h2>
+                            <label htmlFor="Nombre">Nombre</label>
+							<input type="text" name="Nombre" placeholder="Nombre" autoComplete="off"/>
+                            <label htmlFor="Correo">Correo</label>
+							<input type="text" name="Correo" placeholder="Correo" autoComplete="off" />
+                            <label htmlFor="Telefono">Telefono</label>
+							<input type="text" name="Telefono" placeholder="Telefono" autoComplete="off"/>
+                            <label htmlFor="Descripcion">Descripcìon</label>
 							<textarea
 								name="comentario"
-								placeholder="Escriba aqui su comentario"
+                                placeholder="Escriba aqui su comentario"
+                                autoComplete="off"
 							></textarea>
 							<input type="button" value="ENVIAR" id="boton" />
 						</form>
