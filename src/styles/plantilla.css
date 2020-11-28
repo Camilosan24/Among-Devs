@@ -29,18 +29,19 @@
 .preferencias-contenedor{
 	box-shadow: 0 0 9px 3px #3fff46;
 	background: #081624;
-    top: 100px;
-    left: 15%;
-    background-repeat: no-repeat;
+   top: 100px;
+   left: 15%;
+   background-repeat: no-repeat;
 	display: flex;
 	position: relative;
 	margin-bottom: 8vh;
 	text-align: center;
-	border-radius: 80px;
+	border-radius: 20px;
 	overflow: hidden;        /*targetas derecha*/
-	height: 280px;
-	width: 800px;
+	max-width: 800px;
+	padding: 0%;
 }
+
 
 .preferencias-contenedor:hover{
 	transition-duration: 0.3s;
