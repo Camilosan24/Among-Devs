@@ -1946,7 +1946,7 @@ body::-webkit-scrollbar {
 
 @keyframes amongper{
 	0% {top: 0; left: 0;opacity: 0;}
-	25%{top: 100%; left: 120%; rotate: 50%;transform: rotate(50deg); opacity: 1;}
+	25%{top: 70%; left: 70%; rotate: 50%;transform: rotate(50deg); opacity: 1;}
 	50%{top: -10%; left: 50%; rotate: 50%;transform: rotate(-50deg);}
 	100%{top: 90%; left: 0%;}
 }
@@ -1963,8 +1963,8 @@ body::-webkit-scrollbar {
 
 @keyframes amongper2{
 	0% {top: 0%; left: 100%; opacity: 0;}
-	25%{top: 100%; left: -10%; rotate: 50%;transform: rotate(50deg); opacity: 1;}
-	50%{top: 100%; left: -10%; rotate: 50%;transform: rotate(100deg);}
+	25%{top: 70%; left: 30%; rotate: 100%;transform: rotate(100deg); opacity: 1;}
+	50%{top: 100%; left: -10%; rotate: 50%;transform: rotate(-50deg);}
 	100%{top: 0%; left: 110%;}
 }
 
