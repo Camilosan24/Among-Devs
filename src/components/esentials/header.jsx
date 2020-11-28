@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import songInicio from '../../sounds/songInicio.mp3'
+
 export default class Header extends Component {
+
+
+	componentDidMount(){
+		let audio = new Audio(songInicio)
+		audio.volume = 0.2;
+		audio.play()
+	}
+
+
 	render() {
 		return (
 			<header className="header-section">
