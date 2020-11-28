@@ -4,13 +4,16 @@ import songInicio from '../../sounds/songInicio.mp3'
 
 export default class Header extends Component {
 
-
-	componentDidMount(){
-		let audio = new Audio(songInicio)
-		audio.volume = 0.2;
-		audio.play()
+	constructor(){
+		super()
+		this.sound = new Audio(songInicio)
 	}
 
+
+	componentDidMount(){
+		this.sound.volume = 0.2;
+		this.sound.play()
+	}
 
 	render() {
 		return (
