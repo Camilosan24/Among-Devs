@@ -65,9 +65,9 @@ class RememberPage extends React.Component {
 					""
 				)}
 
-				{this.state.startPlaying ? "": this.state.startBox === 'remember' ? <ButtonStart audioPlay={this.audioPlay} hideButtonStart={this.hideButtonStart}/> : ""}
+				{this.state.startPlaying ? "": this.state.startBox === 'remember' ? <ButtonStart audioPlay={this.audioPlay} hideButtonStart={this.hideButtonStart} /> : ""}
 				{this.state.startBox === "full" ? (
-					<LlenarBotones/>) : ("")}
+					<LlenarBotones funcResult={this.showResultZone}/>) : ("")}
 
 				{this.state.winOrLoseZone === "win" ? (
 					<WinZone />

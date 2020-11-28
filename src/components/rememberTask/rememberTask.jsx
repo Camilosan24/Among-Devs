@@ -29,6 +29,7 @@ class RememberTask extends React.Component {
 		this.soundWin = new Audio(taskCompleted);
 	}
 
+
 	componentDidMount() {
 		let divImg1 = [];
 		let divImg2 = [];
@@ -137,7 +138,6 @@ class RememberTask extends React.Component {
 		return proofEntry;
 	};
 
-	handleLoad = () => {};
 
 	render() {
 		if (this.start === true) {
@@ -147,7 +147,6 @@ class RememberTask extends React.Component {
 		return (
 			<section
 				className="hero-section overflow-hidden"
-				onLoad={this.handleLoad}
 			>
 				<div className="hero-slider owl-carousel">
 					<div className="hero-item set-bg d-flex align-items-center justify-content-center text-center">

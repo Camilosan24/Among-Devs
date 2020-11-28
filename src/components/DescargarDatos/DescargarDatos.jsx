@@ -2,6 +2,7 @@ import React from "react";
 import "../../styles/styleDescargar.css";
 import barraM from "../../img/barraM.png";
 import pantallazo from "../../img/pantallazo.png";
+import taskCompleted from "../../sounds/taskCompleted.mp3";
 
 class DescargarDatos extends React.Component {
   constructor(props) {
@@ -9,9 +10,7 @@ class DescargarDatos extends React.Component {
     this.canvas = React.createRef();
     this.LIMITE_CARGA = 320;
     this.interval = null;
-
-    this.imagenBarra = new Image();
-    this.imagenBarra.src = "../../img/barraM.png";
+    this.soundWin = new Audio(taskCompleted);
 
     this.rect = {
       posX: 25,
@@ -42,6 +41,7 @@ class DescargarDatos extends React.Component {
 
   miau = () => {
     if (this.estaEnElLimite()) {
+      this.soundWin.play();
       this.props.funcResult("win");
       clearInterval(this.interval);
       this.setState({

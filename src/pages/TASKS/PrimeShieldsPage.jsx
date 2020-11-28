@@ -4,10 +4,12 @@ import WinZone from "../../components/esentials/WinZone";
 import shieldBack from "../../img/shieldBack.png";
 import abrir from "../../sounds/AudioEnergia.mp3";
 import ChooseTask from "../../components/esentials/ChooseTask";
+import openTask from "../../sounds/openTask.mp3";
 import "../../styles/style.css";
 class PrimeShieldsPage extends React.Component {
 	constructor() {
 		super();
+		this.sound = new Audio(openTask);
 		this.state = {
 			startBox: false,
 			winOrLoseZone: false,
@@ -23,9 +25,14 @@ class PrimeShieldsPage extends React.Component {
 	};
 
 	showTask = (option) => {
+		this.sound.play();
 		this.setState({
 			startBox: option,
 		});
+	};
+
+	audioPlay = () => {
+		this.sound.play();
 	};
 	showResultZone = (result) => {
 		this.setState({ winOrLoseZone: result });
@@ -37,7 +44,7 @@ class PrimeShieldsPage extends React.Component {
 				<div className="backgroundTaskDivert">
 					{this.state.startBox ? "" : <img src={shieldBack} alt="" />}
 					{!this.state.startBox && <div className="tasks">
-						<ChooseTask name={"Mision "} value={true} showFunc={this.showTask} />
+						<ChooseTask name={"Mision Escudos"} value={true} showFunc={this.showTask} />
 					</div>}
 				</div>
 				{this.state.startBox && (

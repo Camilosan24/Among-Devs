@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/divertpower.css";
 import energiaSound from '../../../src/sounds/AudioEnergia.mp3';
+import taskCompleted from "../../sounds/taskCompleted.mp3";
 
 
 class DivertPower extends React.Component {
@@ -11,9 +12,8 @@ class DivertPower extends React.Component {
 		this.state = {
 			closeGame: false,
 			activar: false,
-
 		};
-
+		this.soundWin = new Audio(taskCompleted);
 		this.energiaSound = new Audio(energiaSound);
 
 		/*this.canvas = document.getElementById("electricidad");*/
@@ -46,6 +46,7 @@ class DivertPower extends React.Component {
 
 	activaEnerg = () => {
 		if (this.estaEnElLimite()) {
+			this.soundWin.play();
 			this.props.funcResult("win");
 			clearInterval(this.interval);
 			this.interval = null;

@@ -3,6 +3,7 @@ import fondo from "../../img/fondostabilizeSteering.png";
 import StabilizeSteering from "../../components/stabilizeSteering/StabilizeSteering";
 import WinZone from "../../components/esentials/WinZone";
 import "../../styles/stabilize.css";
+import openTask from "../../sounds/openTask.mp3";
 import ChooseTask from "../../components/esentials/ChooseTask";
 
 class StabilizeSteeringPage extends React.Component {
@@ -12,12 +13,18 @@ class StabilizeSteeringPage extends React.Component {
 			startBox: false,
 			winOrLoseZone: false,
 		};
+		this.sound = new Audio(openTask);
 	}
 
 	showTask = (option) => {
+		this.sound.play();
 		this.setState({
 			startBox: option,
 		});
+	};
+
+	audioPlay = () => {
+		this.sound.play();
 	};
 
 	showResultZone = (result) => {

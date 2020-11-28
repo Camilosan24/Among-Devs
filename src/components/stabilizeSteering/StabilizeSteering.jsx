@@ -12,8 +12,7 @@ class PrimeShields extends React.Component {
 			y:0,
 			count: 3,
 		};
-
-		this.sound = new Audio(taskCompleted);
+		this.soundWin = new Audio(taskCompleted);
 	}
 
 	handleMouseMove = (e) => {
@@ -22,6 +21,7 @@ class PrimeShields extends React.Component {
 		this.puntero.current.style.top = (this.state.y-370) + "px";
 
 		if((e.clientX >= 863 && e.clientX <= 869) && (e.clientY >= 464 && e.clientY <= 469)){
+			this.soundWin.play();
 			this.props.funcResult("win");
 		}
 	};

@@ -3,10 +3,12 @@ import DescargarDatos from "../../components/DescargarDatos/DescargarDatos";
 import WinZone from "../../components/esentials/WinZone";
 import ChooseTask from '../../components/esentials/ChooseTask'
 import backDownload from "../../img/backDownload.png";
+import openTask from "../../sounds/openTask.mp3";
 
 class DescargarDatosPages extends React.Component {
 	constructor() {
 		super();
+		this.sound = new Audio(openTask);
 		this.state = {
 			startBox: false,
 			winOrLoseZone: false,
@@ -20,9 +22,15 @@ class DescargarDatosPages extends React.Component {
 	};
 
 	showTask = (option) => {
+		this.audioPlay()
 		this.setState({
 			startBox: option,
 		});
+	};
+
+	audioPlay = () => {
+
+		this.sound.play();
 	};
 
 	showResultZone = (result) => {

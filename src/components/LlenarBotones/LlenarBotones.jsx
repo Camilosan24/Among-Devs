@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/styleLlenarBotones.css";
 import backNumbers from "../../img/backNumbers.png";
+import taskCompleted from "../../sounds/taskCompleted.mp3";
 
 class LlenarBotones extends React.Component {
 	constructor(props) {
@@ -16,12 +17,14 @@ class LlenarBotones extends React.Component {
 		this.bot9 = React.createRef();
 		this.bot10 = React.createRef();
 		this.global = 1;
+		this.soundWin = new Audio(taskCompleted);
 
 		this.lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		this.listaNueva = this.lista.sort(function () {
 			return Math.random() - 0.5;
 		});
 	}
+
 
 	componentDidMount() {
 		this.bot1.current.value = this.listaNueva[0];
@@ -41,12 +44,14 @@ class LlenarBotones extends React.Component {
 		if (objetivo === this.global) {
 			e.target.style.backgroundColor = "green";
 			if (this.global === 10) {
-				console.log(this.global);
-			} else {
+				this.soundWin.play();
+				this.props.funcResult("win");
+			} else{
 				this.global++;
 			}
 		} else {
 			e.target.style.backgroundColor = "red";
+			this.props.funcResult("lose");
 		}
 	};
 
