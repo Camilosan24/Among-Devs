@@ -34,16 +34,11 @@ h5,
 h6 {
 	margin: 0;
 	color: #111111;
-	font-weight: 500;
+	font-weight: 2000px;
+	font-size: 2000px;
 }
 
-h1 {
-	font-size: 70px;
-}
 
-h2 {
-	font-size: 36px;
-}
 
 h3 {
 	font-size: 30px;
@@ -530,29 +525,53 @@ ol {
 	padding-top: 125px;
 }
 
-.hero-item h2 {
+.hero-item h1 { /*------------------------------------Inicio-----------------------------------------*/
+	font-family: 'Nerko One', cursive;
 	font-size: 160px;
+	color: rgb(221, 205, 205);
+	line-height: 1;
+	position: relative;
+	margin-top: -2%;
+	padding: -8%;
+	opacity: 10px;
+}
+
+.hero-item h2 {
+	font-family: 'Nerko One', cursive;
+	font-size: 80px;
 	color: #fff;
 	font-weight: 500;
 	line-height: 1;
-	position: relative;
-	top: 100px;
-	opacity: 1;
-}
-
-.hero-item p {
-	font-size: 24px;
-	color: rgba(255, 255, 255, 0.4);
-	font-weight: 500;
-	margin-bottom: 70px;
 	position: relative;
 	top: 80px;
 	opacity: 1;
 }
 
+.hero-item p {
+	font-size: 24px;
+	color: #b8c0b8;
+	font-weight: 500;
+	margin-bottom: 70px;
+	position: relative;
+	top: 80px;
+	opacity: 1;
+	padding: 1%;
+}
+
+.hero-item .etiquetaA p {
+	font-size: 200%;
+	color: #fcf9f9;
+	font-weight: 200;
+	margin-bottom: 0px;
+	top: 90px;
+	padding: 1%;
+	color: #3fff46;
+
+}
+
 .hero-item .site-btn {
 	position: relative;
-	top: 50px;
+	margin-top: -10%;
 	opacity: 0;
 }
 

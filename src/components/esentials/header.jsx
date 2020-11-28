@@ -29,7 +29,7 @@ export default class Header extends Component {
 								/>
 							</div>
 							<div className="logo-text">
-								<a className="navbar-brand text-white-50" href="https://www.notion.so/AmongDevs-4e4990b2ac2e4a80ba44ca5b6dd603dd">
+								<a className="navbar-brand text-white-50" href="https://github.com/Camilosan24/Among-Devs">
 									<span className="title">mong</span>
 								</a>
 							</div>

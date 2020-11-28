@@ -1,4 +1,6 @@
 import React from "react";
+
+
 class Main extends React.Component {
 	render() {
 		return (
@@ -9,16 +11,19 @@ class Main extends React.Component {
 						data-setbg="img/banner.jpg"
 					>
 						<div className="container">
-							<h2>Game on!</h2>
+							<h1>Among Us</h1>
+							<h2>Terminator</h2>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-								libero, magni molestiae ex dolorem quas quidem saepe, rem quos
-								aperiam excepturi illum amet similique, vitae delectus corporis
-								laudantium consequuntur nulla!
+								El siguiente juego es una pequeña representacion de Among Us donde se recrearon 6 tareas del video juego, con
+								diferente nivel de dificuldad desarrollado principalmente en la libreria de React.js para el curso de DevsHouse
+								a cargo de IBACREA.
 							</p>
-							<a href="/" className="site-btn">
-								Read More <img src="img/icons/double-arrow.png" alt="#" />
-							</a>
+
+							<div className="etiquetaA">
+								<p>
+									!Espero lo disfrutes!
+							    </p>
+							</div>
 						</div>
 					</div>
 				</div>
