@@ -1,0 +1,212 @@
+
+
+
+.diseño{
+    font-size: 55px;
+    color:rgb(252, 252, 252);
+}
+
+.Titulo h1{
+    font-size: 50px;
+    margin-bottom: 100px;
+    margin: auto;
+    max-width: 250px;
+	color:#3fff46;
+	margin-top: 14%;
+}
+
+
+/*lado izquierdo*/
+.pasiones{
+	height: auto;
+	width: 97vw;
+}
+.pasion-box{
+	width: 65.9vw;
+	margin-left: 17vw;
+}
+
+.preferencias-contenedor{
+	box-shadow: 0 0 9px 3px #3fff46;
+	background: #081624;
+    top: 100px;
+    left: 15%;
+    background-repeat: no-repeat;
+	display: flex;
+	position: relative;
+	margin-bottom: 8vh;
+	text-align: center;
+	border-radius: 80px;
+	overflow: hidden;        /*targetas derecha*/
+	height: 280px;
+	width: 800px;
+}
+
+.preferencias-contenedor:hover{
+	transition-duration: 0.3s;
+	transform: scale(1.01) translateY(-10px);
+}
+
+.preferencias-contenedor img {
+    top: 25px;
+	width: 150px;
+	height: 150px;
+    position: relative;
+    border-radius: 150px;
+}
+
+.product-image{
+	width: 50%;
+}
+
+.preferencias-contenedor .contenido {
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	padding: 5px;
+	height: 100%;
+	float: center;
+	width: 90%;
+}
+
+.preferencias-contenedor .contenido h1{
+	font-family: 'Old Standard TT', serif;
+	display: inline-block;
+	position: relative;
+	font-size: 30px;
+	color: #3fff46;
+	margin: 5px;
+}
+
+.preferencias-contenedor .contenido p {
+	font-family: 'Farsan', cursive;
+	text-align: center;
+	font-size: 16px;
+    color: #f8f8f8;
+}
+
+
+.RedesSociales{
+	top: 120%;
+}
+
+.github a{
+	position: relative;
+	top:58px;
+	left:-60px;
+	width: 250px;
+	height: 150px;
+	padding: 5px;
+}
+
+.linkedin a{
+	position: relative;
+	top:35px;
+	left:80px;
+	width: 250px;
+	height: 150px;
+	padding: 5px;
+}
+
+.social .red{
+	padding:10% 10%;
+}
+
+.social {
+	position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	left: 0%; /* Establecemos la barra en la izquierda */
+	top: 20%; /* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+ 
+	.social ul {
+		list-style: none;
+	}
+ 
+	.social ul li a {
+		display: inline-block;
+		box-shadow: 0 0 2px 3px #3fff46;
+		padding: 15px 30px;
+		border-radius: 8%;
+		text-decoration: none;
+		-webkit-transition:all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+	}
+	
+	.social ul li .icon-youtube {background: #e9edf0;}/* Establecemos los colores de cada red social, aprovechando su class */
+	.social ul li .icon-gmail {background: #e9edf0;}
+    .social ul li .icon-slack {background: #e9edf0;}
+    
+    .social ul li a:hover {
+		background :transparent; /* Cambiamos el fondo cuando el usuario pase el mouse */
+		padding: 28px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+    }
+
+
+	/*formulario*/
+
+.form{     /*tamaño y margen del formulario**/
+    width: 53%;
+    margin: 150px 290px;
+    background: rgba(0,0,0,0.4);
+    padding : 50px 50px;
+    top: 10px;
+	border-radius: 15px;
+	box-shadow: 0 0 8px 8px #3fff46;
+}
+
+
+.form img{     /*tamaño y margen del formulario**/
+	top: -20px;
+	left: 300px;
+	width: 150px;
+	height: 150px;
+    position: relative;
+    border-radius: 150px;
+}
+
+.form h2{
+	font-family: 'Old Standard TT', serif;
+    color: #3fff46;
+    font-size: 50px;
+	text-align: left;
+	margin-bottom: 20px;
+	margin-top: -35%;
+}
+
+.form input{
+    width: 212%;
+    margin-bottom: 6%;
+    padding: 10% 10%;
+	font-size: 12px;
+	color: #020202;
+}
+
+.form textarea{
+	width: 212%;
+    margin-bottom: 6%;
+    padding: 10% 20%;
+	font-size: 12px;
+	color: #020202;
+}
+
+#boton{
+    background: #081624;
+    color: #3fff46;
+	padding: 20px;
+	
+}
+
+#boton:hover{
+	cursor: pointer;
+	transition-duration: 0.5s;
+	transform: scale(1.01) translateY(-10px);
+	
+}
+
+@Media (max-width:480px) {
+    form{
+        width: 100%;
+    }
+}

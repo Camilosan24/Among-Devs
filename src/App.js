@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Layout from "./pages/layout/layout";
 import StartPage from './pages/MAIN/StartPage';
 import MapPage from './pages/MAIN/MapPage';
+import contactosPage from './pages/MAIN/ContactsPage';
 import RememberPage from './pages/TASKS/RememberPage';
 import DivertPowerPage from './pages/TASKS/DivertPowerPage';
 import PrimeShieldsPage from './pages/TASKS/PrimeShieldsPage';
@@ -26,6 +27,7 @@ function App() {
 					<Route exact path="/shield" component={PrimeShieldsPage} />
 					<Route exact path="/admin" component={DescargarDatosPages} />
 					<Route exact path="/stabilize" component={StabilizeSteeringPage} />
+					<Route exact path="/contactos" component={contactosPage} />
 				</Switch>
 			</Layout>
 		</BrowserRouter>

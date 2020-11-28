@@ -16,7 +16,7 @@ export default class Footer extends Component {
 							<Link to="/game">GAME</Link>
 						</li>
 						<li>
-							<Link to="/contact">CONTACTO</Link>
+							<Link to="/contactos">CONTACTO</Link>
 						</li>
 					</ul>
 					<div className="footer-social d-flex justify-content-center">
